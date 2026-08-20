@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0c10;
+  --foreground: #f4f4f5;
+  --brand-orange: #ff5500;
+  --brand-orange-light: #ff7733;
+  --brand-orange-dark: #d94800;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --font-bebas: var(--font-bebas-neue), "Bebas Neue", Impact, sans-serif;
+  --font-outfit: var(--font-outfit), "Outfit", sans-serif;
+  --font-sans: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+  --color-brand-orange: #ff5500;
+  --color-brand-orange-light: #ff7733;
+  --color-brand-orange-dark: #d94800;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0b0c10;
+  color: #f4f4f5;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  overflow-x: hidden;
 }
+
+.font-bebas {
+  font-family: var(--font-bebas-neue), "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-outfit {
+  font-family: var(--font-outfit), "Outfit", sans-serif;
+}
+
+/* Custom glowing borders & backdrop effects */
+.hero-glow-border {
+  border: 2px solid #ff5500;
+  box-shadow: 0 0 35px rgba(255, 85, 0, 0.28), inset 0 0 20px rgba(255, 85, 0, 0.08);
+}
+
+.subtle-orange-glow {
+  box-shadow: 0 0 25px rgba(255, 85, 0, 0.35);
+}
+
+.text-stroke-orange {
+  -webkit-text-stroke: 1.5px #ff5500;
+  color: transparent;
+}
+
+/* Floating animation for suspended containers */
+@keyframes floatSway {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.4deg);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-float-sway {
+  animation: floatSway 6s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(18, 20, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0e12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5500;
+}
+
