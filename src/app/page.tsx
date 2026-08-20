@@ -7,6 +7,7 @@ import ServicesSection from "@/components/ServicesSection";
 import FreightManagement from "@/components/FreightManagement";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import BookingModal from "@/components/BookingModal";
+import Preloader from "@/components/Preloader";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -24,6 +25,9 @@ export default function Home() {
 
   return (
     <main className="w-full min-h-screen bg-[#07080b] text-white overflow-x-hidden">
+      {/* Starting Screen Cinematic Preloader */}
+      <Preloader />
+
       {/* 1. Exact Replica Hero Section */}
       <section className="w-full">
         <Hero onOpenBooking={() => handleOpenBooking()} />
