@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,6 +14,28 @@ interface NavbarProps {
 export default function Navbar({ onOpenBooking }: NavbarProps) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Close mobile menu whenever the route/pathname changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll when mobile menu is open to prevent jumping/hiding
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -20,6 +45,82 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     { name: "Compliance & IEC", href: "/compliance" },
     { name: "Contact", href: "/contact" },
   ];
+
+  const mobileDrawer = (
+    <>
+      {/* Backdrop Blur Overlay mounted on document.body */}
+      <div
+        onClick={() => setMobileMenuOpen(false)}
+        className="fixed inset-0 bg-black/80 backdrop-blur-lg z-[99998] transition-opacity duration-300 animate-in fade-in"
+      />
+
+      {/* Floating Modal Drawer Menu */}
+      <div className="fixed top-16 sm:top-20 inset-x-3 sm:inset-x-6 max-w-lg mx-auto max-h-[85vh] overflow-y-auto bg-zinc-950/98 border border-white/20 backdrop-blur-3xl rounded-[28px] p-5 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.9)] z-[99999] animate-in fade-in slide-in-from-top-3 duration-200 overscroll-contain flex flex-col justify-between">
+        
+        {/* Top Drawer Header with Cancel / Close Button */}
+        <div className="flex items-center justify-between pb-3.5 mb-3 border-b border-white/10 shrink-0">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#ff5500]" />
+            <span className="text-xs font-mono font-bold text-zinc-300 tracking-wider">
+              NAVIGATION MENU
+            </span>
+          </div>
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-1.5 bg-white/10 hover:bg-[#ff5500] text-zinc-200 hover:text-white px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 active:scale-95 cursor-pointer shadow-sm"
+            aria-label="Close menu"
+          >
+            <X className="w-4 h-4" />
+            <span>Close</span>
+          </button>
+        </div>
+
+        {/* Links List */}
+        <ul className="flex flex-col gap-2 py-1">
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+            return (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center justify-between py-3 px-4 rounded-2xl transition-all ${
+                    isActive
+                      ? "bg-[#ff5500] text-white font-bold shadow-lg shadow-orange-500/30"
+                      : "text-zinc-200 hover:bg-zinc-900 hover:text-white active:bg-zinc-800"
+                  }`}
+                >
+                  <span className="text-[15px] font-medium tracking-wide">{link.name}</span>
+                  <ChevronRight className={`w-4 h-4 ${isActive ? "text-white" : "text-zinc-500"}`} />
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* Bottom CTA & Support Block */}
+        <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3 shrink-0">
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenBooking();
+            }}
+            className="w-full py-3.5 bg-[#ff5500] hover:bg-[#e04800] text-white font-bold text-sm rounded-2xl flex items-center justify-center gap-2 shadow-xl shadow-orange-500/35 active:scale-95 transition-all cursor-pointer"
+          >
+            <span>Instant Trade Inquiry / Quote</span>
+            <ChevronRight className="w-4 h-4" />
+          </button>
+          
+          <div className="flex items-center justify-center gap-2 text-[11px] text-zinc-400 font-mono">
+            <PhoneCall className="w-3.5 h-3.5 text-[#ff5500]" />
+            <span>Ahmedabad HQ • Sarkhej, Gujarat</span>
+          </div>
+        </div>
+
+      </div>
+    </>
+  );
 
   return (
     <header className="w-full pt-1.5 sm:pt-2 md:pt-3 px-3 sm:px-6 md:px-10 lg:px-14 z-50 relative">
@@ -86,73 +187,8 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         </div>
       </nav>
 
-      {/* Mobile Drawer Menu - Fixed Above Everything so it never gets clipped */}
-      {mobileMenuOpen && (
-        <>
-          {/* Backdrop Blur Overlay */}
-          <div
-            onClick={() => setMobileMenuOpen(false)}
-            className="md:hidden fixed inset-0 bg-black/70 backdrop-blur-md z-[9998]"
-          />
-
-          <div className="md:hidden fixed top-20 left-3 right-3 max-h-[calc(100vh-100px)] overflow-y-auto bg-zinc-950/95 border border-white/20 backdrop-blur-2xl rounded-3xl p-5 shadow-2xl z-[9999] animate-in fade-in slide-in-from-top-4 duration-200">
-            {/* Top Drawer Header with Cancel / Close Button */}
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
-              <span className="text-xs font-mono font-bold text-zinc-400 tracking-wider">
-                MENU
-              </span>
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-1.5 bg-white/10 hover:bg-[#ff5500] text-zinc-200 hover:text-white px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 active:scale-95 cursor-pointer"
-                aria-label="Close menu"
-              >
-                <X className="w-3.5 h-3.5" />
-                <span>Close</span>
-              </button>
-            </div>
-
-            <ul className="flex flex-col gap-2 text-sm font-medium">
-              {navLinks.map((link) => {
-                const isActive =
-                  link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
-                return (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center justify-between py-2.5 px-3.5 rounded-xl transition-colors ${
-                        isActive
-                          ? "bg-[#ff5500] text-white font-bold shadow-md shadow-orange-500/30"
-                          : "text-zinc-200 hover:bg-zinc-850 hover:text-white"
-                      }`}
-                    >
-                      <span className="text-[14px]">{link.name}</span>
-                      <ChevronRight className="w-4 h-4 opacity-80" />
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-
-            <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenBooking();
-                }}
-                className="w-full py-3 bg-[#ff5500] hover:bg-[#e04800] text-white font-bold rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30 active:scale-95 transition-transform"
-              >
-                <span>Instant Cargo Booking</span>
-                <ChevronRight className="w-4 h-4" />
-              </button>
-              <div className="flex items-center justify-center gap-2 text-[11px] text-zinc-400 font-mono">
-                <PhoneCall className="w-3.5 h-3.5 text-[#ff5500]" />
-                <span>Ahmedabad HQ: Sarkhej, Gujarat</span>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
+      {/* Portal Mobile Drawer directly to document.body so overflow-hidden never clips it on any device */}
+      {mounted && mobileMenuOpen && createPortal(mobileDrawer, document.body)}
     </header>
   );
 }
