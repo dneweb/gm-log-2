@@ -16,12 +16,14 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   const bgRef = useRef<HTMLDivElement>(null);
   const importContainerRef = useRef<HTMLSpanElement>(null);
   const exportContainerRef = useRef<HTMLDivElement>(null);
+  const mobileImportRef = useRef<HTMLDivElement>(null);
+  const mobileExportRef = useRef<HTMLDivElement>(null);
   const title1Ref = useRef<HTMLHeadingElement>(null);
   const title2Ref = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
-  // High-Impact GSAP Cinematic Entrance & Realistic Physics
+  // High-Impact GSAP Cinematic Entrance & Realistic Physics (Desktop & Mobile)
   useEffect(() => {
     const ctx = gsap.context(() => {
       // 1. Cinematic Title & Content Entrance Timeline
@@ -51,11 +53,11 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           "-=0.5"
         );
 
-      // 2. Continuous Organic Floating Physics for Hanging Container
+      // 2. Desktop Continuous Organic Floating Physics for Hanging Container
       if (importContainerRef.current) {
         gsap.to(importContainerRef.current, {
-          y: "+=8",
-          rotation: "+=1.2",
+          y: "+=10",
+          rotation: "+=2.2",
           duration: 3,
           repeat: -1,
           yoyo: true,
@@ -63,21 +65,49 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         });
       }
 
-      // 3. Continuous Subtle Breathing on 3D Export Container
+      // 3. Desktop Continuous Subtle Breathing on 3D Export Container
       if (exportContainerRef.current) {
         gsap.to(exportContainerRef.current, {
-          y: "-=6",
+          y: "-=8",
+          rotationY: "+=3",
           duration: 3.5,
           repeat: -1,
           yoyo: true,
           ease: "sine.inOut",
         });
       }
+
+      // 4. Mobile Continuous Dynamic Hanging Container Sway Physics
+      if (mobileImportRef.current) {
+        gsap.to(mobileImportRef.current, {
+          y: "+=12",
+          x: "+=6",
+          rotation: "+=3.5",
+          duration: 2.8,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          transformOrigin: "top left",
+        });
+      }
+
+      // 5. Mobile Continuous 3D Floating Grounded Export Container Physics
+      if (mobileExportRef.current) {
+        gsap.to(mobileExportRef.current, {
+          y: "-=10",
+          x: "-=5",
+          scale: 1.04,
+          duration: 3.2,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          transformOrigin: "bottom right",
+        });
+      }
     }, heroRef);
 
-    // 4. Interactive Desktop Mouse Physics
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
+    // 6. Interactive Desktop Mouse & Mobile Touch Physics
+    const handleMove = (clientX: number, clientY: number) => {
       const xNorm = (clientX / window.innerWidth - 0.5) * 2; // -1 to 1
       const yNorm = (clientY / window.innerHeight - 0.5) * 2; // -1 to 1
 
@@ -90,10 +120,11 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         });
       }
 
+      // Desktop Containers
       if (importContainerRef.current) {
         gsap.to(importContainerRef.current, {
-          rotation: xNorm * 4,
-          x: xNorm * 8,
+          rotation: xNorm * 5,
+          x: xNorm * 10,
           duration: 1.6,
           ease: "power1.out",
         });
@@ -103,17 +134,50 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         gsap.to(exportContainerRef.current, {
           x: -xNorm * 22,
           y: -yNorm * 14,
-          rotationY: xNorm * 5,
+          rotationY: xNorm * 6,
           duration: 1.5,
+          ease: "power2.out",
+        });
+      }
+
+      // Mobile Containers
+      if (mobileImportRef.current) {
+        gsap.to(mobileImportRef.current, {
+          rotation: xNorm * 6,
+          x: xNorm * 12,
+          y: yNorm * 8,
+          duration: 1.2,
+          ease: "power2.out",
+        });
+      }
+
+      if (mobileExportRef.current) {
+        gsap.to(mobileExportRef.current, {
+          x: -xNorm * 16,
+          y: -yNorm * 12,
+          duration: 1.2,
           ease: "power2.out",
         });
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    const handleMouseMove = (e: MouseEvent) => {
+      handleMove(e.clientX, e.clientY);
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        handleMove(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+
     return () => {
       ctx.revert();
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
@@ -152,15 +216,17 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="absolute top-2 left-2 w-[220px] xs:w-[260px] sm:w-[290px] h-[130px] xs:h-[155px] sm:h-[175px] pointer-events-none z-10 animate-float-sway"
+          className="absolute top-2 left-2 w-[220px] xs:w-[260px] sm:w-[290px] h-[130px] xs:h-[155px] sm:h-[175px] pointer-events-none z-10"
         >
-          <Image
-            src="/images/i.png"
-            alt="Hanging Import Container in Top Left"
-            fill
-            priority
-            className="object-contain object-left-top drop-shadow-[0_15px_30px_rgba(0,0,0,0.98)]"
-          />
+          <div ref={mobileImportRef} className="relative w-full h-full will-change-transform">
+            <Image
+              src="/images/i.png"
+              alt="Hanging Import Container in Top Left"
+              fill
+              priority
+              className="object-contain object-left-top drop-shadow-[0_15px_30px_rgba(0,0,0,0.98)]"
+            />
+          </div>
         </motion.div>
 
         {/* Center: Headline + Text + CTA */}
@@ -198,13 +264,15 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="absolute bottom-0 right-0 w-[280px] xs:w-[330px] sm:w-[370px] h-[170px] xs:h-[200px] sm:h-[225px] pointer-events-none select-none z-10"
         >
-          <Image
-            src="/images/e.png"
-            alt="3D Heavy Cargo Shipping Container in Lower Right"
-            fill
-            priority
-            className="object-contain object-bottom-right drop-shadow-[0_25px_50px_rgba(0,0,0,0.98)]"
-          />
+          <div ref={mobileExportRef} className="relative w-full h-full will-change-transform">
+            <Image
+              src="/images/e.png"
+              alt="3D Heavy Cargo Shipping Container in Lower Right"
+              fill
+              priority
+              className="object-contain object-bottom-right drop-shadow-[0_25px_50px_rgba(0,0,0,0.98)]"
+            />
+          </div>
         </motion.div>
 
       </div>
