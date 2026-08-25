@@ -22,26 +22,30 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "IMPO-EXPO | Global Import & Export Logistics Solutions",
+  title: "10X INTERNATIONAL | Global Import & Export Logistics Solutions",
   description:
-    "Trusted Import And Export Solutions For Businesses Worldwide. We Handle Air Freight, Ocean Logistics, Customs Support, And Fast Delivery Services With Complete Reliability And Efficiency.",
+    "10X INTERNATIONAL is a government-certified export-import firm (DGFT IEC: AADFZ3605M, GSTIN: 24AADFZ3605M1Z0) based in Ahmedabad, Gujarat, India. Premier ocean container freight, air express, and commodity trade solutions worldwide.",
   keywords: [
-    "Import",
-    "Export",
-    "Global Logistics",
-    "Ocean Freight",
-    "Air Cargo",
-    "Customs Clearance",
-    "Shipping Container",
+    "10X INTERNATIONAL",
+    "10X INTERNATIONAL Ahmedabad",
+    "DGFT IEC AADFZ3605M",
+    "GSTIN 24AADFZ3605M1Z0",
+    "Indian Exporter",
+    "Gujarat Import Export",
+    "Ocean Freight FCL LCL",
+    "Air Cargo Express",
+    "Indian Spices Export",
+    "Customs Clearance Mundra Hazira",
   ],
   icons: {
-    icon: "/images/logo2.png",
-    shortcut: "/images/logo2.png",
-    apple: "/images/logo2.png",
+    icon: "/images/lo.png",
+    shortcut: "/images/lo.png",
+    apple: "/images/lo.png",
   },
 };
 
 import GSAPProvider from "@/components/GSAPProvider";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function RootLayout({
   children,
@@ -55,6 +59,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-[#0d0e12] text-white font-sans antialiased selection:bg-[#ff5500] selection:text-white">
         <GSAPProvider>{children}</GSAPProvider>
+        <WhatsAppButton />
       </body>
     </html>
   );

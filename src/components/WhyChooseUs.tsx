@@ -127,12 +127,12 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
   ];
 
   const pageLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Services", href: "#services" },
-    { name: "Gallery", href: "#features" },
-    { name: "Features", href: "#features" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Products", href: "/products" },
+    { name: "Compliance & IEC", href: "/compliance" },
+    { name: "Contact & RFQ", href: "/contact" },
   ];
 
   return (
@@ -164,8 +164,7 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
               Why Choose Us?
             </motion.h2>
             <p className="text-zinc-300 text-xs sm:text-sm md:text-[15px] leading-relaxed font-normal mb-4">
-              Our Experienced Logistics Team Provides Dependable Transportation Solutions With
-              Fast Delivery, Transparent Communication, And Complete Shipment Management For Global Businesses.
+              10X INTERNATIONAL provides government-certified export-import solutions with rapid container shipping, transparent communication, and complete cargo coordination for businesses worldwide.
             </p>
 
             <button
@@ -194,7 +193,7 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
               <div className="flex flex-col">
                 <h4 className="text-white font-semibold text-xs sm:text-sm">Trusted Freight Experts</h4>
                 <p className="text-zinc-400 text-[11px] sm:text-xs leading-tight">
-                  Professional Cargo And Logistics Support For International Shipping Operations.
+                  10X INTERNATIONAL • DGFT & GST Registered International Shipping Operations.
                 </p>
               </div>
             </div>
@@ -272,21 +271,20 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
               {/* Only Image Logo */}
               <div className="relative h-10 sm:h-12 w-[150px] sm:w-[180px]">
                 <Image
-                  src="/images/logo2.png"
-                  alt="Global Logistics Brand Logo"
+                  src="/images/lo.png"
+                  alt="10X INTERNATIONAL Logo"
                   fill
                   className="object-contain object-left"
                 />
               </div>
               <p className="text-zinc-950 text-xs sm:text-sm md:text-[14px] leading-relaxed font-semibold max-w-sm">
-                Trusted Global Logistics And Freight Forwarding Solutions. Delivering Efficient Air, Ocean,
-                Customs, And Fast Warehousing Operations Across Every International Trade Route.
+                10X INTERNATIONAL • Premier Government-Certified Import-Export Firm. Managing global air, ocean container freight, and multi-continental commodity supply chains.
               </p>
             </div>
 
             {/* Col 2 (Span 3): Pages Navigation */}
             <div className="md:col-span-3 flex flex-col gap-3">
-              <h4 className="font-outfit font-bold text-lg text-zinc-950 tracking-tight">Pages</h4>
+              <h4 className="font-outfit font-bold text-lg text-zinc-950 tracking-tight">Navigation</h4>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-xs sm:text-sm font-bold text-zinc-950">
                 {pageLinks.map((link, idx) => (
                   <Link
@@ -302,23 +300,34 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
 
             {/* Col 3 (Span 4): Contact Info */}
             <div className="md:col-span-4 flex flex-col gap-3">
-              <h4 className="font-outfit font-bold text-lg text-zinc-950 tracking-tight">Contact Info</h4>
-              <div className="flex flex-col gap-2.5 text-xs sm:text-sm font-bold text-zinc-950">
-                <div className="flex items-center gap-2.5">
-                  <MapPin className="w-4 h-4 flex-shrink-0 text-zinc-950" />
-                  <span>458 Cargo Avenue, New York, NY</span>
+              <h4 className="font-outfit font-bold text-lg text-zinc-950 tracking-tight">Head Office</h4>
+              <div className="flex flex-col gap-2 text-xs sm:text-[13px] font-bold text-zinc-950">
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 flex-shrink-0 text-zinc-950 mt-0.5" />
+                  <span>Nr. Haji Bawa Ni Kui, 14/4, M.J.D. Farm, Sarkhej Road, Juhapura, Ahmedabad, Gujarat 380055, India</span>
                 </div>
-                <div className="flex items-center gap-2.5">
-                  <Phone className="w-4 h-4 flex-shrink-0 text-zinc-950" />
-                  <span>+1 245 789 4512</span>
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <div className="flex items-center gap-1.5">
+                    <Phone className="w-4 h-4 flex-shrink-0 text-zinc-950" />
+                    <a href="tel:+919825012345" className="hover:underline">+91 98250 12345</a>
+                  </div>
+                  <span>/</span>
+                  <a
+                    href="https://wa.me/919265588226?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20import-export%20inquiry."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 bg-zinc-950 text-white px-2 py-0.5 rounded-md hover:bg-[#ff5500] transition-colors"
+                  >
+                    <span>WhatsApp: +91 92655 88226</span>
+                  </a>
                 </div>
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 flex-shrink-0 text-zinc-950" />
-                  <span>import@gmail.com</span>
+                  <span>contact@10xinternational.com</span>
                 </div>
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4 flex-shrink-0 text-zinc-950" />
-                  <span>www.import.com</span>
+                  <span>DGFT IEC: AADFZ3605M • GSTIN: 24AADFZ3605M1Z0</span>
                 </div>
               </div>
             </div>
@@ -327,11 +336,11 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
 
           {/* Sub-Footer Row */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 text-xs sm:text-sm font-bold text-zinc-950">
-            <p>All Rights Reserved © 2026 Import Smarter. Export Faster.</p>
+            <p>All Rights Reserved © 2026 10X INTERNATIONAL. Partnership Firm Registered in Gujarat, India.</p>
             <div className="flex items-center gap-4 sm:gap-6">
-              <Link href="#" className="hover:underline">Privacy policy</Link>
-              <Link href="#" className="hover:underline">Terms of Service</Link>
-              <Link href="#" className="hover:underline">Sitemap</Link>
+              <Link href="/compliance" className="hover:underline">Govt. Verification</Link>
+              <Link href="/contact" className="hover:underline">Contact HQ</Link>
+              <Link href="/about" className="hover:underline">About Firm</Link>
             </div>
           </div>
 

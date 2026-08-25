@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, Play } from "lucide-react";
 import gsap from "gsap";
@@ -52,10 +53,10 @@ export default function AboutSection({ onExploreServices }: AboutSectionProps) {
   }, []);
 
   const bulletPoints = [
-    { id: 1, text: "Reliable International Freight Services" },
-    { id: 2, text: "Fast Customs Clearance Support" },
-    { id: 3, text: "Secure Packaging And Cargo Handling" },
-    { id: 4, text: "24/7 Shipment Tracking" },
+    { id: 1, text: "India ➔ UAE: Rice, Fruits, Veg & Spices Export" },
+    { id: 2, text: "India ➔ Africa: Trucks, Dumpers, JCBs & Safety Tools" },
+    { id: 3, text: "China ➔ India: Kids/Mens Wear & Cosmetics Import" },
+    { id: 4, text: "Government-Verified Compliance & Port Clearance" },
   ];
 
   return (
@@ -68,8 +69,8 @@ export default function AboutSection({ onExploreServices }: AboutSectionProps) {
       {/* ========================================================================= */}
       <div className="relative w-full max-w-[1520px] mx-auto rounded-[28px] sm:rounded-[36px] md:rounded-[44px] border border-[#ff5500]/25 bg-[#090a0e] overflow-hidden p-5 sm:p-7 md:p-8 lg:p-10 shadow-[0_0_80px_rgba(255,85,0,0.12),0_25px_50px_rgba(0,0,0,0.9)]">
         
-        {/* 1. Background Ship Image (shio.png) Inside The Box */}
-        <div className="absolute inset-y-0 left-0 w-[55%] md:w-[50%] lg:w-[46%] pointer-events-none z-0 overflow-hidden">
+        {/* 1. Background Ship Image (shio.png) Inside The Box - Shown on Desktop to prevent mobile text overlap */}
+        <div className="hidden lg:block absolute inset-y-0 left-0 w-[46%] pointer-events-none z-0 overflow-hidden">
           <Image
             src="/images/shio.png"
             alt="Container Port Ship at Sunset"
@@ -174,19 +175,17 @@ export default function AboutSection({ onExploreServices }: AboutSectionProps) {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="lg:col-span-6 flex flex-col gap-3.5 sm:gap-4 text-left pl-0 lg:pl-3"
           >
-            {/* Main Title: About Project (About in white, Project in glowing orange) */}
+            {/* Main Title: About 10X INTERNATIONAL */}
             <div>
-              <h2 className="font-outfit text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+              <h2 className="font-outfit text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
                 <span className="text-white">About </span>
-                <span className="text-[#ff5500] drop-shadow-[0_0_30px_rgba(255,85,0,0.8)]">Project</span>
+                <span className="text-[#ff5500] drop-shadow-[0_0_30px_rgba(255,85,0,0.8)] block xs:inline">10X INTERNATIONAL</span>
               </h2>
             </div>
 
             {/* Subtitle / Description Paragraph */}
-            <p className="text-zinc-300 text-xs sm:text-sm md:text-[14px] leading-relaxed font-normal max-w-xl">
-              We Provide Smart Logistics And Transportation Services For Importers, Exporters, And
-              Growing Businesses. Our Team Ensures Secure Cargo Handling, Fast Documentation, And
-              Smooth Global Delivery Operations.
+            <p className="text-zinc-200 text-xs sm:text-sm md:text-[14px] leading-relaxed font-normal max-w-xl">
+              10X INTERNATIONAL is a premier government-certified export-import firm based in Ahmedabad, Gujarat. We provide streamlined ocean container freight, customs brokerage, and cross-border trade operations across global markets.
             </p>
 
             {/* 2x2 Bullet Points Grid with Orange Circular Checkmarks */}
@@ -223,10 +222,10 @@ export default function AboutSection({ onExploreServices }: AboutSectionProps) {
                 {/* Text Info */}
                 <div className="flex flex-col">
                   <h4 className="text-white font-semibold text-xs sm:text-[13px] tracking-tight group-hover:text-[#ff5500] transition-colors">
-                    Worldwide Cargo Network
+                    10X Global Freight Network
                   </h4>
                   <p className="text-zinc-400 text-[10px] sm:text-[11px] font-normal">
-                    Fast And Secure Freight Solutions
+                    Ahmedabad HQ • Mundra & Hazira Ports
                   </p>
                 </div>
               </div>
@@ -247,17 +246,23 @@ export default function AboutSection({ onExploreServices }: AboutSectionProps) {
               </div>
             </div>
 
-            {/* Explore Services CTA Button */}
-            <div className="pt-2">
-              <button
-                onClick={onExploreServices}
+            {/* Action Buttons */}
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <Link
+                href="/about"
                 className="group inline-flex items-center gap-3 bg-white hover:bg-zinc-100 text-[#ff5500] text-xs sm:text-sm md:text-[15px] font-bold pl-1.5 pr-5 py-1.5 rounded-full transition-all duration-300 cursor-pointer active:scale-95 shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
               >
                 <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#ff5500] group-hover:scale-105 text-white flex items-center justify-center transition-transform duration-300 shadow-md">
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[3]" />
                 </span>
-                <span className="tracking-wide font-bold">Explore Services</span>
-              </button>
+                <span className="tracking-wide font-bold">Discover 10X International</span>
+              </Link>
+              <Link
+                href="/services"
+                className="text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white transition-colors px-3 py-1.5"
+              >
+                All Services →
+              </Link>
             </div>
 
           </motion.div>

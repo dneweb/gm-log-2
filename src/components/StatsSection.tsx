@@ -3,6 +3,8 @@
 import React from "react";
 import { Globe2, Award, Clock, ShieldCheck, TrendingUp, Users } from "lucide-react";
 
+import AnimatedCounter from "@/components/AnimatedCounter";
+
 export default function StatsSection() {
   const stats = [
     { number: "99.8%", label: "On-Time Port Arrival", desc: "Across 45,000+ commercial voyages annually" },
@@ -38,7 +40,7 @@ export default function StatsSection() {
               className="bg-zinc-950/70 border border-zinc-800/80 rounded-2xl p-4 sm:p-6 text-center hover:border-[#ff5500]/50 transition-all duration-300 group shadow-md"
             >
               <div className="font-bebas text-5xl sm:text-6xl text-[#ff5500] group-hover:scale-105 transition-transform duration-300">
-                {stat.number}
+                <AnimatedCounter value={stat.number} />
               </div>
               <h3 className="text-sm sm:text-base font-bold text-white mt-1 mb-1">{stat.label}</h3>
               <p className="text-[11px] sm:text-xs text-zinc-400 leading-normal">{stat.desc}</p>

@@ -2,7 +2,19 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { Play, ArrowUpRight, Truck, X } from "lucide-react";
+import {
+  Play,
+  ArrowUpRight,
+  Truck,
+  X,
+  Ship,
+  Plane,
+  ShieldCheck,
+  Zap,
+  Warehouse,
+  Radio,
+  FileCheck2,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,7 +37,7 @@ export default function FreightManagement() {
             opacity: 1,
             x: 0,
             scale: 1,
-            duration: 1,
+            duration: 0.8,
             ease: "power3.out",
             scrollTrigger: {
               trigger: sectionRef.current,
@@ -42,7 +54,7 @@ export default function FreightManagement() {
             opacity: 1,
             x: 0,
             scale: 1,
-            duration: 1,
+            duration: 0.8,
             delay: 0.15,
             ease: "power3.out",
             scrollTrigger: {
@@ -59,19 +71,20 @@ export default function FreightManagement() {
   }, []);
 
   const filterTags = [
-    { name: "Full Truckload Logistics", href: "#" },
-    { name: "Express Air Delivery", href: "#" },
-    { name: "Ocean Freight Forwarding", href: "#" },
+    { name: "India ➔ UAE Agro Export", href: "/products" },
+    { name: "India ➔ Africa Machinery", href: "/products" },
+    { name: "China ➔ India Imports", href: "/products" },
+    { name: "DGFT Port Brokerage", href: "/compliance" },
   ];
 
   const articles = [
     {
       id: 1,
       image: "/images/freight_tablet_tracking.jpg",
-      alt: "Logistics Specialist Tracking Modern Freight Delivery on Tablet",
-      title: "Real-Time Tracking & Digital Freight Coordination Across Global Ports",
-      date: "04",
-      month: "JULY",
+      alt: "Freight Specialist Managing Smart Warehouse Logistics on Tablet",
+      title: "Real-Time Digital Cargo Tracking & Optimized Route Dispatch System",
+      date: "24",
+      month: "AUG",
       year: "2026",
     },
     {
@@ -86,12 +99,14 @@ export default function FreightManagement() {
   ];
 
   const tickerItems = [
-    { text: "FAST DISPATCH" },
-    { text: "SECURE AIR FREIGHT" },
-    { text: "GLOBAL TRUCKING" },
-    { text: "24/7 SHIPMENT TRACKING" },
-    { text: "CUSTOMS COMPLIANCE" },
-    { text: "OCEAN CARGO CARRIER" },
+    { text: "OCEAN CARGO CARRIER", icon: Ship },
+    { text: "SECURE AIR FREIGHT", icon: Plane },
+    { text: "DGFT CUSTOMS COMPLIANCE", icon: ShieldCheck },
+    { text: "FAST EXPRESS DISPATCH", icon: Zap },
+    { text: "SMART BONDED WAREHOUSING", icon: Warehouse },
+    { text: "24/7 LIVE SATELLITE TRACKING", icon: Radio },
+    { text: "CONTAINER MULTIMODAL TRUCKING", icon: Truck },
+    { text: "VERIFIED PORT DOCUMENTATION", icon: FileCheck2 },
   ];
 
   return (
@@ -246,17 +261,20 @@ export default function FreightManagement() {
           }}
           className="flex w-max items-center gap-10 sm:gap-16 whitespace-nowrap"
         >
-          {[...tickerItems, ...tickerItems].map((ticker, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3 sm:gap-4 font-outfit font-bold text-xs sm:text-sm md:text-base lg:text-lg text-zinc-950 whitespace-nowrap tracking-wide"
-            >
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center shadow-md flex-shrink-0">
-                <Truck className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff5500]" />
+          {[...tickerItems, ...tickerItems].map((ticker, index) => {
+            const Icon = ticker.icon;
+            return (
+              <div
+                key={index}
+                className="flex items-center gap-3 sm:gap-4 font-outfit font-bold text-xs sm:text-sm md:text-base lg:text-lg text-zinc-950 whitespace-nowrap tracking-wide"
+              >
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center shadow-md flex-shrink-0">
+                  <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#ff5500] stroke-[2.5]" />
+                </div>
+                <span>{ticker.text}</span>
               </div>
-              <span>{ticker.text}</span>
-            </div>
-          ))}
+            );
+          })}
         </motion.div>
       </div>
 

@@ -50,45 +50,45 @@ export default function ServicesSection({ onOpenBooking }: ServicesSectionProps)
   }, []);
 
   const servicesData = [
-    // Column 1: Air Cargo (Image Top, Text Bottom)
+    // Column 1: UAE Agro & Spices Export
     {
-      id: "air-freight",
+      id: "uae-agro-export",
       type: "image-top",
-      title: "Air Cargo Logistics",
-      image: "/images/service_air_cargo.jpg",
-      alt: "Fast International Air Cargo Freight Logistics with Pilot and Cargo Plane",
-      text: "Fast And Secure Air Cargo Delivery For Urgent International Shipments And Business Transportation Needs.",
-      tag: "Air Express",
+      title: "India ➔ UAE Agro & Spices",
+      image: "/images/service_uae_agro.jpg",
+      alt: "India to UAE Container Freight for Basmati Rice, Spices, Fruits and Vegetables",
+      text: "Fast Reefer & Dry container export of Basmati Rice, Fresh Fruits, Vegetables, Pulses, and Gujarat Spices to Dubai (Jebel Ali) & Gulf ports.",
+      tag: "UAE Export",
     },
-    // Column 2: Customs Clearance (Text Top, Image Bottom)
+    // Column 2: Africa Machinery & Hardware Export
+    {
+      id: "africa-machinery-export",
+      type: "text-top",
+      title: "India ➔ Africa Machinery",
+      image: "/images/service_africa_machinery.jpg",
+      alt: "Exporting Trucks, Dumpers, JCB Earthmovers and Hardware to Africa",
+      text: "Specialized breakbulk & Ro-Ro shipping of Heavy Trucks, Dumpers, JCB Excavators, Building Safety Tools, and Hardware to South Africa & East/West African ports.",
+      tag: "Africa Export",
+    },
+    // Column 3: China Specialty Imports
+    {
+      id: "china-specialty-import",
+      type: "image-top",
+      title: "China ➔ India Specialty Import",
+      image: "/images/service_china_import.jpg",
+      alt: "Importing Kids Wear, Mens Wear, Undergarments and Cosmetics from China to India",
+      text: "High-volume air & ocean import customs clearance for Kids Wear, Mens Wear, Ladies Undergarments, Fashion Textiles, and Beauty Cosmetics.",
+      tag: "China Import",
+    },
+    // Column 4: DGFT Customs & Port Brokerage
     {
       id: "customs-brokerage",
       type: "text-top",
-      title: "Customs Support",
-      image: "/images/service_customs.jpg",
-      alt: "Customs Brokerage and International Trade Compliance Inspector",
-      text: "Complete Support For Customs Paperwork And International Trade Compliance Services.",
+      title: "DGFT Customs Clearance",
+      image: "/images/service_customs_clearance.jpg",
+      alt: "Government Registered Customs Brokerage at Mundra, Hazira and JNPT",
+      text: "Single-window customs EDI port filing, bill of entry, APEDA/phytosanitary inspections, and zero-delay cargo clearance.",
       tag: "Customs Brokerage",
-    },
-    // Column 3: Ocean Logistics (Image Top, Text Bottom)
-    {
-      id: "ocean-freight",
-      type: "image-top",
-      title: "Sea Freight Shipping",
-      image: "/images/service_sea_freight.jpg",
-      alt: "Heavy Ocean Container Carrier Ship on Deep Blue Sea",
-      text: "Affordable Sea Freight Services With Reliable Container Management And Worldwide Port Connectivity.",
-      tag: "Ocean Freight",
-    },
-    // Column 4: Warehousing Storage (Text Top, Image Bottom)
-    {
-      id: "warehousing",
-      type: "text-top",
-      title: "Storage & Distribution",
-      image: "/images/service_warehouse.jpg",
-      alt: "High-Bay Modern Pallet Warehousing and Distribution Center",
-      text: "Safe And Organized Storage Facilities For Inventory Management, Cargo Protection, And Quick Dispatch.",
-      tag: "Warehousing",
     },
   ];
 

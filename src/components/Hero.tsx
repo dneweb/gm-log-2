@@ -174,9 +174,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </h2>
           </div>
 
-          <p className="text-zinc-300 text-xs xs:text-[13px] leading-relaxed font-normal max-w-[320px] drop-shadow-md mt-2.5 mb-3.5">
-            Trusted Import And Export Solutions For Businesses Worldwide. We Handle Air
-            Freight, Ocean Logistics, Customs Support, And Fast Delivery Services.
+          <p className="text-zinc-300 text-xs xs:text-[13px] leading-relaxed font-normal max-w-[340px] drop-shadow-md mt-2.5 mb-4">
+            Exporting Agro, Rice & Spices to UAE; Machinery & Hardware to Africa; and Importing Kids/Mens Wear & Cosmetics from China to India.
           </p>
 
           <div>
@@ -192,11 +191,11 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
         </div>
 
-        {/* Grounded at Bottom Right */}
+        {/* Bottom Right Corner: Grounded EXPORT Container */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          initial={{ opacity: 0, scale: 0.9, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="absolute bottom-0 right-0 w-[280px] xs:w-[330px] sm:w-[370px] h-[170px] xs:h-[200px] sm:h-[225px] pointer-events-none select-none z-10"
         >
           <Image
@@ -266,9 +265,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             ref={subtitleRef}
             className="text-zinc-300 text-sm md:text-[15px] leading-relaxed font-normal max-w-md drop-shadow-md"
           >
-            Trusted Import And Export Solutions For Businesses Worldwide. We Handle Air
-            Freight, Ocean Logistics, Customs Support, And Fast Delivery Services With Complete
-            Reliability And Efficiency.
+            10X INTERNATIONAL: Government-certified export-import operations. Exporting Agro & Spices to UAE; Heavy Machinery & Hardware to Africa; and Importing Apparel & Beauty Cosmetics from China to India.
           </p>
 
           <div ref={ctaRef} className="flex items-center pt-1">

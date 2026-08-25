@@ -1,8 +1,7 @@
-"use client";
-
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronRight, Menu, X, PhoneCall } from "lucide-react";
 
 interface NavbarProps {
@@ -10,28 +9,28 @@ interface NavbarProps {
 }
 
 export default function Navbar({ onOpenBooking }: NavbarProps) {
-  const [activeTab, setActiveTab] = useState("Home");
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
-    { name: "Service", href: "#services" },
-    { name: "Features", href: "#features" },
-    { name: "Blog", href: "#tracking" },
-    { name: "Contact", href: "#calculator" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Products", href: "/products" },
+    { name: "Compliance & IEC", href: "/compliance" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
     <header className="w-full pt-1.5 sm:pt-2 md:pt-3 px-3 sm:px-6 md:px-10 lg:px-14 z-50 relative">
       <nav className="w-full max-w-[1520px] mx-auto bg-white/[0.15] text-white border border-white/30 backdrop-blur-3xl rounded-full px-4 sm:px-6 md:px-8 py-1.5 sm:py-2 shadow-[0_15px_35px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.4)] flex items-center justify-between transition-all duration-300">
         
-        {/* Left Brand Logo - Clean Image Logo */}
-        <Link href="#home" className="flex items-center group py-0.5">
-          <div className="relative h-7 sm:h-8 md:h-9 w-[120px] sm:w-[140px] md:w-[155px] transition-transform duration-200 group-hover:scale-105">
+        {/* Left Brand Logo - Clean 10X INTERNATIONAL Logo */}
+        <Link href="/" className="flex items-center group py-0.5">
+          <div className="relative h-8 sm:h-9 md:h-10 w-[130px] sm:w-[155px] md:w-[175px] transition-transform duration-200 group-hover:scale-105">
             <Image
-              src="/images/logo2.png"
-              alt="Global Logistics Logo"
+              src="/images/lo.png"
+              alt="10X INTERNATIONAL - Global Logistics Logo"
               fill
               priority
               className="object-contain object-left drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
@@ -40,22 +39,22 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         </Link>
 
         {/* Center Navigation Links */}
-        <ul className="hidden md:flex items-center gap-6 lg:gap-9 text-[13px] lg:text-[14px] font-medium text-zinc-300">
+        <ul className="hidden md:flex items-center gap-5 lg:gap-8 text-[13px] lg:text-[14px] font-medium text-zinc-300">
           {navLinks.map((link) => {
-            const isActive = activeTab === link.name;
+            const isActive =
+              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
               <li key={link.name} className="relative py-0.5">
                 <Link
                   href={link.href}
-                  onClick={() => setActiveTab(link.name)}
                   className={`transition-colors duration-200 hover:text-white ${
-                    isActive ? "text-[#ff5500] font-semibold" : "text-zinc-300"
+                    isActive ? "text-[#ff5500] font-bold" : "text-zinc-300"
                   }`}
                 >
                   {link.name}
                 </Link>
                 {isActive && (
-                  <span className="absolute -bottom-0.5 left-0 right-0 h-[2px] bg-[#ff5500] rounded-full animate-in fade-in duration-300" />
+                  <span className="absolute -bottom-0.5 left-0 right-0 h-[2px] bg-[#ff5500] rounded-full shadow-[0_0_8px_rgba(255,85,0,0.8)] animate-in fade-in duration-300" />
                 )}
               </li>
             );
@@ -87,48 +86,72 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         </div>
       </nav>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu - Fixed Above Everything so it never gets clipped */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-4 right-4 bg-zinc-900/95 border border-zinc-700/60 backdrop-blur-xl rounded-3xl p-6 shadow-2xl z-50 animate-in fade-in slide-in-from-top-4 duration-200">
-          <ul className="flex flex-col gap-4 text-base font-medium">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  onClick={() => {
-                    setActiveTab(link.name);
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`flex items-center justify-between py-2 px-3 rounded-xl transition-colors ${
-                    activeTab === link.name
-                      ? "bg-[#ff5500]/15 text-[#ff5500] font-semibold"
-                      : "text-zinc-200 hover:bg-zinc-800"
-                  }`}
-                >
-                  <span>{link.name}</span>
-                  <ChevronRight className="w-4 h-4 opacity-70" />
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <>
+          {/* Backdrop Blur Overlay */}
+          <div
+            onClick={() => setMobileMenuOpen(false)}
+            className="md:hidden fixed inset-0 bg-black/70 backdrop-blur-md z-[9998]"
+          />
 
-          <div className="mt-6 pt-4 border-t border-zinc-800 flex flex-col gap-3">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenBooking();
-              }}
-              className="w-full py-3 bg-[#ff5500] hover:bg-[#e04800] text-white font-semibold rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
-            >
-              <span>Instant Cargo Booking</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-            <div className="flex items-center justify-center gap-2 text-xs text-zinc-400">
-              <PhoneCall className="w-3.5 h-3.5 text-[#ff5500]" />
-              <span>24/7 Support: +1 (800) 555-IMPO</span>
+          <div className="md:hidden fixed top-20 left-3 right-3 max-h-[calc(100vh-100px)] overflow-y-auto bg-zinc-950/95 border border-white/20 backdrop-blur-2xl rounded-3xl p-5 shadow-2xl z-[9999] animate-in fade-in slide-in-from-top-4 duration-200">
+            {/* Top Drawer Header with Cancel / Close Button */}
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+              <span className="text-xs font-mono font-bold text-zinc-400 tracking-wider">
+                MENU
+              </span>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-1.5 bg-white/10 hover:bg-[#ff5500] text-zinc-200 hover:text-white px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 active:scale-95 cursor-pointer"
+                aria-label="Close menu"
+              >
+                <X className="w-3.5 h-3.5" />
+                <span>Close</span>
+              </button>
+            </div>
+
+            <ul className="flex flex-col gap-2 text-sm font-medium">
+              {navLinks.map((link) => {
+                const isActive =
+                  link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+                return (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`flex items-center justify-between py-2.5 px-3.5 rounded-xl transition-colors ${
+                        isActive
+                          ? "bg-[#ff5500] text-white font-bold shadow-md shadow-orange-500/30"
+                          : "text-zinc-200 hover:bg-zinc-850 hover:text-white"
+                      }`}
+                    >
+                      <span className="text-[14px]">{link.name}</span>
+                      <ChevronRight className="w-4 h-4 opacity-80" />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenBooking();
+                }}
+                className="w-full py-3 bg-[#ff5500] hover:bg-[#e04800] text-white font-bold rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30 active:scale-95 transition-transform"
+              >
+                <span>Instant Cargo Booking</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+              <div className="flex items-center justify-center gap-2 text-[11px] text-zinc-400 font-mono">
+                <PhoneCall className="w-3.5 h-3.5 text-[#ff5500]" />
+                <span>Ahmedabad HQ: Sarkhej, Gujarat</span>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

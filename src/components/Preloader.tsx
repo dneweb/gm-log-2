@@ -81,8 +81,8 @@ export default function Preloader() {
               {/* Logo Image */}
               <div className="relative h-14 sm:h-16 md:h-20 w-[180px] sm:w-[220px] md:w-[260px] drop-shadow-[0_0_35px_rgba(255,85,0,0.6)]">
                 <Image
-                  src="/images/logo2.png"
-                  alt="Global Logistics Logo"
+                  src="/images/lo.png"
+                  alt="10X INTERNATIONAL Logo"
                   fill
                   priority
                   className="object-contain"
