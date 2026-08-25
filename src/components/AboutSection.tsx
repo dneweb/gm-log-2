@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, Play } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 import gsap from "gsap";
 
 interface AboutSectionProps {
@@ -12,7 +12,6 @@ interface AboutSectionProps {
 }
 
 export default function AboutSection({ onExploreServices }: AboutSectionProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
   const cardContainerRef = useRef<HTMLDivElement>(null);
 
   // GSAP 3D Interactive Card Tilt
@@ -138,17 +137,6 @@ export default function AboutSection({ onExploreServices }: AboutSectionProps) {
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-
-                {/* Central Glowing Play Button (▶) */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button
-                    onClick={() => setIsPlaying(!isPlaying)}
-                    className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#ff5500] hover:bg-[#ff661a] text-white flex items-center justify-center shadow-[0_0_25px_rgba(255,85,0,0.6)] border-2 border-white/40 transition-transform duration-300 group-hover:scale-110 active:scale-95 cursor-pointer"
-                    aria-label="Play fulfillment video"
-                  >
-                    <Play className="w-5 h-5 fill-white text-white translate-x-0.5" />
-                  </button>
-                </div>
 
                 {/* Bottom Glass Badge: Automated Fulfillment / Speed • Safety • Scale */}
                 <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 bg-black/65 backdrop-blur-md border border-white/15 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 text-left">

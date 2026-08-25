@@ -163,19 +163,9 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
             >
               Why Choose Us?
             </motion.h2>
-            <p className="text-zinc-300 text-xs sm:text-sm md:text-[15px] leading-relaxed font-normal mb-4">
+            <p className="text-zinc-300 text-xs sm:text-sm md:text-[15px] leading-relaxed font-normal">
               10X INTERNATIONAL provides government-certified export-import solutions with rapid container shipping, transparent communication, and complete cargo coordination for businesses worldwide.
             </p>
-
-            <button
-              onClick={onDiscoverWork}
-              className="group inline-flex items-center gap-3 bg-white hover:bg-zinc-100 text-[#ff5500] text-sm font-bold pl-1.5 pr-5 py-1.5 rounded-full transition-all duration-300 cursor-pointer active:scale-95 shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
-            >
-              <span className="w-8 h-8 rounded-full bg-[#ff5500] group-hover:scale-105 text-white flex items-center justify-center transition-transform duration-300 shadow-md">
-                <ChevronRight className="w-4 h-4 stroke-[3]" />
-              </span>
-              <span className="tracking-wide font-bold">Discover Our Work</span>
-            </button>
           </div>
 
           {/* Right Header: Trusted Freight Experts Pill + 2x2 Bullets */}
@@ -212,10 +202,10 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
         </div>
 
         {/* Center Visual Area: Left 3-Stats + Giant 3D Container Crane */}
-        <div className="relative w-full flex items-center justify-between min-h-[320px] sm:min-h-[380px] md:min-h-[420px] mt-2 sm:mt-4">
+        <div className="relative w-full flex items-center justify-between min-h-[280px] xs:min-h-[300px] sm:min-h-[360px] md:min-h-[420px] mt-2 sm:mt-4 overflow-hidden md:overflow-visible">
           
           {/* Left Stats Stack */}
-          <div className="relative z-20 flex flex-col gap-6 sm:gap-8 max-w-[200px]">
+          <div className="relative z-20 flex flex-col gap-4 xs:gap-5 sm:gap-8 max-w-[135px] xs:max-w-[160px] sm:max-w-[200px]">
             {stats.map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -225,10 +215,10 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
                 transition={{ duration: 0.6, delay: idx * 0.15 }}
                 className="flex flex-col"
               >
-                <span className="font-outfit font-bold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-none drop-shadow-[0_4px_15px_rgba(0,0,0,0.9)]">
+                <span className="font-outfit font-bold text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-none drop-shadow-[0_4px_15px_rgba(0,0,0,0.9)]">
                   <AnimatedCounter value={stat.target} suffix={stat.suffix} />
                 </span>
-                <span className="text-zinc-400 text-xs sm:text-sm font-medium mt-1">
+                <span className="text-zinc-300 sm:text-zinc-400 text-[11px] xs:text-xs sm:text-sm font-medium mt-1 leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                   {stat.label}
                 </span>
               </motion.div>
@@ -238,7 +228,7 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
           {/* Center-Right Giant Container & Aircraft Visual - Grand & Grounded */}
           <div
             ref={craneRef}
-            className="absolute right-0 sm:right-2 md:right-4 lg:right-6 top-[37%] -translate-y-1/2 w-[350px] sm:w-[500px] md:w-[640px] lg:w-[780px] xl:w-[860px] aspect-[16/10] pointer-events-none z-10 will-change-transform"
+            className="absolute -right-8 xs:-right-4 sm:right-2 md:right-4 lg:right-6 top-[42%] sm:top-[37%] -translate-y-1/2 w-[210px] xs:w-[250px] sm:w-[420px] md:w-[600px] lg:w-[780px] xl:w-[860px] aspect-[16/10] pointer-events-none z-10 will-change-transform"
           >
             <div className="relative w-full h-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.95)]">
               <Image
