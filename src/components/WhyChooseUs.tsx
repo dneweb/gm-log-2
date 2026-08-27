@@ -299,16 +299,16 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
                 <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                   <div className="flex items-center gap-1.5">
                     <Phone className="w-4 h-4 flex-shrink-0 text-zinc-950" />
-                    <a href="tel:+919825012345" className="hover:underline">+91 98250 12345</a>
+                    <a href="tel:+917984488660" className="hover:underline">+91 79844 88660</a>
                   </div>
                   <span>/</span>
                   <a
-                    href="https://wa.me/917926821010?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20import-export%20inquiry."
+                    href="https://wa.me/917984488660?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20import-export%20inquiry."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 bg-zinc-950 text-white px-2 py-0.5 rounded-md hover:bg-[#ff5500] transition-colors"
                   >
-                    <span>WhatsApp: +91 79 2682 1010</span>
+                    <span>WhatsApp: +91 79844 88660</span>
                   </a>
                 </div>
                 <div className="flex items-center gap-2">

@@ -84,17 +84,17 @@ export default function Footer() {
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 pt-0.5">
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-[#ff5500] shrink-0" />
-                  <a href="tel:+919825012345" className="hover:text-white transition-colors">+91 98250 12345</a>
+                  <a href="tel:+917984488660" className="hover:text-white transition-colors">+91 79844 88660</a>
                 </div>
                 <span className="text-zinc-600">•</span>
                 <a
-                  href="https://wa.me/917926821010?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20inquiry%20regarding%20import/export%20services."
+                  href="https://wa.me/917984488660?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20inquiry%20regarding%20import/export%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.5 rounded-lg transition-colors"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>WhatsApp: +91 79 2682 1010</span>
+                  <span>WhatsApp: +91 79844 88660</span>
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
