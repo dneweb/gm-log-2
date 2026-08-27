@@ -303,12 +303,12 @@ export default function WhyChooseUs({ onDiscoverWork }: WhyChooseUsProps) {
                   </div>
                   <span>/</span>
                   <a
-                    href="https://wa.me/919265588226?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20import-export%20inquiry."
+                    href="https://wa.me/917926821010?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20import-export%20inquiry."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 bg-zinc-950 text-white px-2 py-0.5 rounded-md hover:bg-[#ff5500] transition-colors"
                   >
-                    <span>WhatsApp: +91 92655 88226</span>
+                    <span>WhatsApp: +91 79 2682 1010</span>
                   </a>
                 </div>
                 <div className="flex items-center gap-2">

@@ -4,7 +4,7 @@ import React from "react";
 import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "919265588226";
+  const phoneNumber = "917926821010";
   const defaultMessage = encodeURIComponent(
     "Hello 10X INTERNATIONAL! I would like to inquire about your export-import services & container freight rates."
   );
@@ -17,7 +17,7 @@ export default function WhatsAppButton() {
     >
       {/* Tooltip on Hover */}
       <span className="hidden sm:block opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 mr-3 px-3 py-1.5 rounded-xl bg-zinc-950/95 text-white text-xs font-medium border border-emerald-500/30 shadow-xl backdrop-blur-md whitespace-nowrap">
-        Chat on WhatsApp: <strong className="text-emerald-400 font-mono">+91 92655 88226</strong>
+        Chat on WhatsApp: <strong className="text-emerald-400 font-mono">+91 79 2682 1010</strong>
       </span>
 
       {/* Floating Pulsing WhatsApp Button */}

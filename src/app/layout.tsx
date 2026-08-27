@@ -155,7 +155,7 @@ export default function RootLayout({
     image: "https://10xinternational.com/images/lo.png",
     description:
       "Government-certified international trade and logistics company in Ahmedabad, Gujarat. Exporting Agro, Spices & Produce to UAE; Heavy Machinery, Trucks & Safety Tools to Africa; Importing Apparel & Cosmetics from China.",
-    telephone: "+91-9265588226",
+    telephone: "+91-7926821010",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Sarkhej Logistics Corridor",

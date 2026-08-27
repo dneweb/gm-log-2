@@ -88,13 +88,13 @@ export default function Footer() {
                 </div>
                 <span className="text-zinc-600">•</span>
                 <a
-                  href="https://wa.me/919265588226?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20inquiry%20regarding%20import/export%20services."
+                  href="https://wa.me/917926821010?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20inquiry%20regarding%20import/export%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.5 rounded-lg transition-colors"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>WhatsApp: +91 92655 88226</span>
+                  <span>WhatsApp: +91 79 2682 1010</span>
                 </a>
               </div>
               <div className="flex items-center gap-2.5">

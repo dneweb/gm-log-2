@@ -44,7 +44,7 @@ export default function CompliancePage() {
       issueDate: "25/05/2023",
       fileNumber: "AHDIECPAPPLY00005415AM24",
       signatory: "Saiyed Nawazuddin",
-      verifyUrl: "https://dgft.gov.in",
+      verifyUrl: "https://www.dgft.gov.in/CP/?opt=view-any-ice",
       badgeColor: "border-[#ff5500]/50 bg-[#ff5500]/10 text-[#ff5500]",
       details: [
         { label: "Legal Entity", value: "10X INTERNATIONAL" },
@@ -109,7 +109,7 @@ export default function CompliancePage() {
 
             <div className="flex items-center gap-3">
               <a
-                href="https://dgft.gov.in"
+                href="https://www.dgft.gov.in/CP/?opt=view-any-ice"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 bg-white/[0.08] hover:bg-white/[0.15] text-white border border-white/20 px-5 py-2.5 rounded-full text-xs font-semibold transition-all"

@@ -69,7 +69,7 @@ ${formData.message}
 _Inquiry sent via 10X INTERNATIONAL Instant Quote Portal_`;
 
     const encoded = encodeURIComponent(formattedMessage);
-    const whatsappUrl = `https://wa.me/919265588226?text=${encoded}`;
+    const whatsappUrl = `https://wa.me/917926821010?text=${encoded}`;
     setLastWhatsAppUrl(whatsappUrl);
     setIsSubmitted(true);
 
@@ -304,7 +304,7 @@ _Inquiry sent via 10X INTERNATIONAL Instant Quote Portal_`;
                   className="w-full bg-[#ff5500] hover:bg-[#e04800] text-white font-bold text-xs sm:text-sm py-3.5 rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30 transition-all duration-200 active:scale-95 cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Send Inquiry to WhatsApp (+91 92655 88226)</span>
+                  <span>Send Inquiry to WhatsApp (+91 79 2682 1010)</span>
                 </button>
               </div>
             </form>

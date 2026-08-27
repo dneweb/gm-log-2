@@ -53,7 +53,7 @@ ${formData.message}
 _Inquiry sent via official website 10xinternational.com_`;
 
     const encoded = encodeURIComponent(formattedMessage);
-    const whatsappUrl = `https://wa.me/919265588226?text=${encoded}`;
+    const whatsappUrl = `https://wa.me/917926821010?text=${encoded}`;
     setLastWhatsAppUrl(whatsappUrl);
     setSubmitted(true);
 
@@ -122,13 +122,13 @@ _Inquiry sent via official website 10xinternational.com_`;
                     <h4 className="font-outfit font-bold text-sm text-white">Direct Phone & WhatsApp</h4>
                     <p className="text-zinc-300 text-xs sm:text-[13px] mt-0.5">+91 98250 12345 (Direct Call)</p>
                     <a
-                      href="https://wa.me/919265588226?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20import/export%20inquiry."
+                      href="https://wa.me/917926821010?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20import/export%20inquiry."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium text-xs mt-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 px-2.5 py-1 rounded-lg transition-colors"
                     >
                       <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>WhatsApp Desk: <strong className="font-mono">+91 92655 88226</strong></span>
+                      <span>WhatsApp Desk: <strong className="font-mono">+91 79 2682 1010</strong></span>
                     </a>
                   </div>
                 </div>
@@ -183,7 +183,7 @@ _Inquiry sent via official website 10xinternational.com_`;
                     Inquiry Sent Directly to WhatsApp!
                   </h3>
                   <p className="text-zinc-300 text-xs sm:text-sm max-w-md mb-5 leading-relaxed">
-                    Your trade inquiry has been formatted and dispatched to the official 10X INTERNATIONAL WhatsApp Desk (<strong className="text-emerald-400 font-mono">+91 92655 88226</strong>).
+                    Your trade inquiry has been formatted and dispatched to the official 10X INTERNATIONAL WhatsApp Desk (<strong className="text-emerald-400 font-mono">+91 79 2682 1010</strong>).
                   </p>
 
                   {/* Summary Card */}
