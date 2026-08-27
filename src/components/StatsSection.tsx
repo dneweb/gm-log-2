@@ -14,8 +14,8 @@ export default function StatsSection() {
   ];
 
   return (
-    <section id="features" className="relative w-full h-screen min-h-[640px] max-h-[1080px] p-2.5 sm:p-4 md:p-6 lg:p-8 bg-[#07080b] flex flex-col items-center justify-center box-border overflow-hidden">
-      <div className="relative w-full h-full max-w-[1520px] rounded-[24px] sm:rounded-[32px] md:rounded-[40px] border border-zinc-800 bg-[#0d0f15]/95 p-4 sm:p-6 md:p-8 flex flex-col justify-between overflow-hidden shadow-2xl backdrop-blur-xl">
+    <section id="features" className="relative w-full py-6 sm:py-10 md:py-14 px-2.5 sm:px-4 md:px-6 lg:px-8 bg-[#07080b] flex flex-col items-center justify-center box-border overflow-hidden">
+      <div className="relative w-full max-w-[1520px] rounded-[24px] sm:rounded-[32px] md:rounded-[40px] border border-zinc-800 bg-[#0d0f15]/95 p-5 sm:p-7 md:p-9 flex flex-col gap-6 sm:gap-8 overflow-hidden shadow-2xl backdrop-blur-xl">
         
         {/* Section Heading */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-zinc-850">

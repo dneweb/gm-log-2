@@ -278,17 +278,17 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       </div>
 
       {/* ========================================================================= */}
-      {/* DESKTOP SCREEN LAYOUT (>= md)                                              */}
+      {/* DESKTOP & LAPTOP SCREEN LAYOUT (>= md)                                     */}
       {/* ========================================================================= */}
-      <div className="hidden md:flex relative z-20 flex-1 px-8 md:px-16 lg:px-24 pt-4 pb-12 flex-col justify-between">
+      <div className="hidden md:flex relative z-20 flex-1 px-6 md:px-12 lg:px-20 xl:px-24 pt-2 md:pt-4 pb-8 md:pb-12 flex-col justify-between overflow-hidden">
         
         {/* Main Headline Block: IMPORT SMARTER / EXPORT FASTER */}
-        <div className="w-full flex flex-col items-start select-none pt-4 md:pt-6">
+        <div className="w-full flex flex-col items-start select-none pt-2 md:pt-4">
           <div className="w-full">
             {/* IMPORT SMARTER with Crane Hook Attached Directly to 'M' */}
             <h1
               ref={title1Ref}
-              className="font-bebas text-[96px] lg:text-[124px] xl:text-[144px] leading-[0.85] tracking-wide text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.95)]"
+              className="font-bebas text-[72px] md:text-[86px] lg:text-[112px] xl:text-[136px] 2xl:text-[148px] leading-[0.88] tracking-wide text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.95)]"
             >
               I<span className="relative inline-block">
                 M
@@ -297,7 +297,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.9, delay: 0.2 }}
-                  className="absolute top-[98%] left-1/2 -translate-x-[30%] w-[420px] lg:w-[500px] xl:w-[560px] h-[245px] lg:h-[290px] xl:h-[325px] z-20 pointer-events-none origin-top block"
+                  className="absolute top-[98%] left-1/2 -translate-x-[30%] w-[260px] md:w-[310px] lg:w-[390px] xl:w-[480px] 2xl:w-[540px] aspect-[16/9.5] z-20 pointer-events-none origin-top block"
                 >
                   <span
                     ref={importContainerRef}
@@ -315,11 +315,11 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               </span>PORT SMARTER
             </h1>
 
-            {/* EXPORT FASTER Shifted All The Way To The Right Edge (Last Tak) */}
-            <div className="w-full flex justify-end pr-0 -mr-2 sm:-mr-4 md:-mr-8 lg:-mr-12 xl:-mr-16 mt-2 lg:mt-3">
+            {/* EXPORT FASTER Shifted To The Right Edge with High Z-Index so it is never covered */}
+            <div className="w-full flex justify-end relative z-30 pr-0 -mr-2 sm:-mr-4 md:-mr-6 lg:-mr-10 xl:-mr-12 mt-1 sm:mt-2 lg:mt-3 pointer-events-none">
               <h2
                 ref={title2Ref}
-                className="font-bebas text-[96px] lg:text-[124px] xl:text-[144px] leading-[0.85] tracking-wide text-[#ff5500] drop-shadow-[0_10px_35px_rgba(255,85,0,0.6)]"
+                className="font-bebas text-[72px] md:text-[86px] lg:text-[112px] xl:text-[136px] 2xl:text-[148px] leading-[0.88] tracking-wide text-[#ff5500] drop-shadow-[0_10px_35px_rgba(255,85,0,0.65)] pointer-events-auto"
               >
                 EXPORT FASTER
               </h2>
@@ -328,33 +328,33 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         </div>
 
         {/* Desktop Left Bottom Block: Subtitle + CTA */}
-        <div className="relative z-30 max-w-xl flex flex-col gap-4 mb-6">
+        <div className="relative z-30 max-w-lg lg:max-w-xl flex flex-col gap-3 sm:gap-4 mb-2 sm:mb-4 lg:mb-6">
           <p
             ref={subtitleRef}
-            className="text-zinc-300 text-sm md:text-[15px] leading-relaxed font-normal max-w-md drop-shadow-md"
+            className="text-zinc-300 text-xs sm:text-[13px] md:text-sm lg:text-[15px] leading-relaxed font-normal max-w-sm sm:max-w-md drop-shadow-md"
           >
             10X INTERNATIONAL: Government-certified export-import operations. Exporting Agro & Spices to UAE; Heavy Machinery & Hardware to Africa; and Importing Apparel & Beauty Cosmetics from China to India.
           </p>
 
-          <div ref={ctaRef} className="flex items-center pt-1">
+          <div ref={ctaRef} className="flex items-center pt-0.5 sm:pt-1">
             <button
               onClick={onOpenBooking}
-              className="group inline-flex items-center gap-3 bg-white hover:bg-zinc-100 text-[#ff5500] text-sm font-bold pl-1.5 pr-5 py-1.5 rounded-full transition-all duration-300 cursor-pointer active:scale-95 shadow-[0_10px_25px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(255,85,0,0.4)]"
+              className="group inline-flex items-center gap-2.5 sm:gap-3 bg-white hover:bg-zinc-100 text-[#ff5500] text-xs sm:text-sm font-bold pl-1.5 pr-4 sm:pr-5 py-1.5 rounded-full transition-all duration-300 cursor-pointer active:scale-95 shadow-[0_10px_25px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(255,85,0,0.4)]"
             >
-              <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#ff5500] group-hover:scale-105 text-white flex items-center justify-center transition-transform duration-300 shadow-md flex-shrink-0">
-                <ChevronRight className="w-4 h-4 stroke-[3]" />
+              <span className="w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9 rounded-full bg-[#ff5500] group-hover:scale-105 text-white flex items-center justify-center transition-transform duration-300 shadow-md flex-shrink-0">
+                <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[3]" />
               </span>
-              <span className="tracking-wide text-[#ff5500] font-bold text-[15px]">
+              <span className="tracking-wide text-[#ff5500] font-bold text-xs sm:text-sm lg:text-[15px]">
                 Get Started
               </span>
             </button>
           </div>
         </div>
 
-        {/* Desktop Giant 3D EXPORT Container Grounded at Bottom Right with GSAP Depth */}
+        {/* Desktop 3D EXPORT Container Grounded at Bottom Right with Proportional Viewport Scaling */}
         <div
           ref={exportContainerRef}
-          className="absolute bottom-0 right-0 sm:right-2 md:right-4 w-[560px] lg:w-[760px] xl:w-[880px] aspect-[16/10] pointer-events-none z-20 select-none will-change-transform"
+          className="absolute bottom-0 right-0 sm:right-2 md:right-4 w-[360px] md:w-[440px] lg:w-[560px] xl:w-[680px] 2xl:w-[800px] max-h-[38vh] md:max-h-[44vh] lg:max-h-[50vh] xl:max-h-[56vh] aspect-[16/10] pointer-events-none z-10 select-none will-change-transform"
         >
           <div className="relative w-full h-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.98)]">
             <Image
