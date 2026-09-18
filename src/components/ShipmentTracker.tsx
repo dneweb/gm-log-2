@@ -27,78 +27,77 @@ interface TrackingData {
 }
 
 const SAMPLE_SHIPMENTS: Record<string, TrackingData> = {
-  "IMPO-7729-US": {
-    id: "IMPO-7729-US",
-    sender: "Shenzhen Precision Electronics Co.",
-    receiver: "Nexus Retail Group, Los Angeles, USA",
-    origin: "Port of Shenzhen (Yantian), China",
-    destination: "Port of Long Beach, USA",
-    carrier: "Pacific Horizon Lines",
-    mode: "ocean",
-    vesselName: "MV Pacific Pioneer (IMO: 9845124)",
-    containerId: "TGHU-992014-8 (40ft High Cube)",
-    status: "In Transit - Mid Pacific Corridor",
-    eta: "Aug 24, 2026 • 14:00 PST",
-    progressPercent: 68,
-    currentLocation: "Coordinates: 31°12'N 155°45'W (Speed: 19.4 knots)",
+  "GMLS-8824-NJ": {
+    id: "GMLS-8824-NJ",
+    sender: "Port of New York / New Jersey Marine Terminal",
+    receiver: "Midwest Distribution Logistics, Chicago, IL",
+    origin: "Port Newark Container Terminal (PNCT), NJ",
+    destination: "Inland Rail Ramp & DC, Chicago, IL",
+    carrier: "GM LOGISTICS SERVICES Dedicated Fleet",
+    mode: "road",
+    vesselName: "GMLS Intermodal Freight Unit #418",
+    containerId: "GMLU-774701-4 (40ft High Cube Drayage)",
+    status: "In Transit • On-Time Schedule",
+    eta: "Today • 17:30 EST",
+    progressPercent: 78,
+    currentLocation: "I-80 W Corridor, Clearfield PA (GPS Verified)",
     checkpoints: [
-      { title: "Cargo Picked Up & Container Sealed", location: "Shenzhen Warehouse", date: "Aug 12, 10:30 CST", completed: true },
-      { title: "Export Customs Cleared & Inspected", location: "Yantian Port Terminal", date: "Aug 14, 18:45 CST", completed: true },
-      { title: "Vessel Departed Origin Port", location: "South China Sea", date: "Aug 15, 06:15 CST", completed: true },
-      { title: "Mid-Ocean International Waters", location: "Trans-Pacific Route", date: "Aug 19, Current", completed: true, current: true },
-      { title: "Arrival & Berthing at Long Beach", location: "Pier 400, Los Angeles", date: "Aug 24, Expected", completed: false },
-      { title: "US Customs & Final Delivery", location: "Inland Distribution Hub", date: "Aug 26, Expected", completed: false },
+      { title: "Container Pulled from PNCT Berth", location: "Newark Port NJ", date: "Yesterday, 08:30 EST", completed: true },
+      { title: "Kendall Park NJ Dispatch Verification", location: "GMLS Operations HQ", date: "Yesterday, 11:15 EST", completed: true },
+      { title: "Interstate Transit via I-80 W Corridor", location: "Pennsylvania Highway", date: "Today, In Progress", completed: true, current: true },
+      { title: "Arrival at Chicago Cross-Dock Ramp", location: "Chicago Hub, IL", date: "Today, Expected", completed: false },
+      { title: "Final Consignee Dock Delivery", location: "Distribution Facility", date: "Tomorrow, 08:00 CST", completed: false },
     ],
   },
-  "EXPO-9912-DE": {
-    id: "EXPO-9912-DE",
-    sender: "Bavaria Auto Systems GmbH, Munich",
-    receiver: "Tokyo Precision Motors, Japan",
-    origin: "Frankfurt Cargo City (FRA)",
-    destination: "Tokyo Narita Airport (NRT)",
-    carrier: "Lufthansa Cargo Express",
-    mode: "air",
-    vesselName: "Boeing 777F (Flight: LH8420)",
-    containerId: "AKE-84912-LH (Temperature Monitored)",
-    status: "Customs Clearance In Progress",
-    eta: "Aug 20, 2026 • 09:30 JST",
-    progressPercent: 88,
-    currentLocation: "Tokyo Narita Air Cargo Terminal 2",
+  "GMLS-5519-CA": {
+    id: "GMLS-5519-CA",
+    sender: "Pacific Rim Importers, Los Angeles",
+    receiver: "Great Lakes Cold Storage, Toronto, Canada",
+    origin: "Port of Long Beach, CA",
+    destination: "Toronto Logistics Center, ON, Canada",
+    carrier: "GMLS Cross-Border Carrier Alliance",
+    mode: "road",
+    vesselName: "GMLS Reefer Unit #512 (-20°C Certified)",
+    containerId: "REEF-917741-2 (53ft Temperature Controlled)",
+    status: "Customs Border Pre-Clearance Approved",
+    eta: "Aug 22 • 11:00 EST",
+    progressPercent: 62,
+    currentLocation: "Midwest Transit Corridor, Detroit Gateway",
     checkpoints: [
-      { title: "Shipment Received & Weighed", location: "Frankfurt Logistics Hub", date: "Aug 18, 08:00 CEST", completed: true },
-      { title: "Air Waybill Issued & Loaded", location: "Frankfurt Airport (FRA)", date: "Aug 18, 14:20 CEST", completed: true },
-      { title: "Flight Landed at Narita", location: "Tokyo Narita (NRT)", date: "Aug 19, 05:40 JST", completed: true },
-      { title: "Import Inspection & Clearance", location: "Narita Customs Zone", date: "Aug 19, Current", completed: true, current: true },
-      { title: "Final Express Delivery", location: "Tokyo Assembly Plant", date: "Aug 20, Expected", completed: false },
+      { title: "Reefer Pre-Cooled & Loaded at Long Beach", location: "Long Beach Pier J", date: "Aug 18, 09:00 PST", completed: true },
+      { title: "Continuous Temperature Telemetry Verified", location: "GMLS Dispatch Center", date: "Aug 19, 14:00 PST", completed: true },
+      { title: "US-Canada Cross-Border Filing (ACI/eManifest)", location: "Ambassador Bridge Zone", date: "Today, Verified", completed: true, current: true },
+      { title: "Canada Border Services Clearance", location: "Windsor Port of Entry", date: "Tonight, Expected", completed: false },
+      { title: "Final Cold-Chain Delivery", location: "Toronto DC", date: "Aug 22, Expected", completed: false },
     ],
   },
-  "CARGO-4431-SG": {
-    id: "CARGO-4431-SG",
-    sender: "Singapore PharmaTech Global",
-    receiver: "MediLife Healthcare, Rotterdam",
-    origin: "Port of Singapore (PSA)",
-    destination: "Port of Rotterdam, Netherlands",
-    carrier: "EuroAsia Maritime Express",
-    mode: "ocean",
-    vesselName: "CMA CGM Palais (IMO: 9789311)",
-    containerId: "REEF-338102-1 (-20°C Cold Chain)",
-    status: "Approaching Suez Canal",
-    eta: "Aug 29, 2026 • 18:00 CET",
-    progressPercent: 52,
-    currentLocation: "Red Sea Maritime Zone",
+  "GMLS-3304-TX": {
+    id: "GMLS-3304-TX",
+    sender: "Gulf Coast Petrochemical Refiners, Houston",
+    receiver: "Northeast Polymer Converters, Newark, NJ",
+    origin: "Baytown Terminal, Houston, TX",
+    destination: "Industrial Staging Yard, Newark, NJ",
+    carrier: "GMLS Hazmat & Heavy-Haul Division",
+    mode: "road",
+    vesselName: "GMLS Permitted Heavy Chassis #208",
+    containerId: "HAZM-449102-8 (DOT Hazmat Certified Class 3)",
+    status: "En Route • On Schedule",
+    eta: "Aug 24 • 14:00 EST",
+    progressPercent: 45,
+    currentLocation: "I-59 N Corridor, Meridian, MS",
     checkpoints: [
-      { title: "Reefer Pre-Cooling & Loading", location: "PSA Singapore Terminal", date: "Aug 10, 11:00 SGT", completed: true },
-      { title: "Departed Strait of Malacca", location: "Indian Ocean Gateway", date: "Aug 12, 16:30 SGT", completed: true },
-      { title: "Red Sea Transit", location: "Approaching Suez", date: "Aug 19, Current", completed: true, current: true },
-      { title: "Mediterranean Gateway", location: "Port Said Outskirts", date: "Aug 22, Expected", completed: false },
-      { title: "Discharge at Rotterdam Port", location: "Maasvlakte 2", date: "Aug 29, Expected", completed: false },
+      { title: "Hazmat Placarded & Weight Certified", location: "Houston Staging Yard", date: "Aug 20, 07:30 CST", completed: true },
+      { title: "State Overweight Corridor Clearance", location: "DOT Inspection Station", date: "Aug 20, 16:00 CST", completed: true },
+      { title: "Interstate Transit & GPS Monitoring", location: "Meridian Highway Hub", date: "Today, Current", completed: true, current: true },
+      { title: "Arrival at Northeast Relay Yard", location: "Kendall Park / Newark NJ", date: "Aug 23, Expected", completed: false },
+      { title: "Final Delivery to Manufacturing Facility", location: "Newark Chemical Works", date: "Aug 24, Expected", completed: false },
     ],
   },
 };
 
 export default function ShipmentTracker() {
-  const [trackingNumber, setTrackingNumber] = useState("IMPO-7729-US");
-  const [activeData, setActiveData] = useState<TrackingData>(SAMPLE_SHIPMENTS["IMPO-7729-US"]);
+  const [trackingNumber, setTrackingNumber] = useState("GMLS-8824-NJ");
+  const [activeData, setActiveData] = useState<TrackingData>(SAMPLE_SHIPMENTS["GMLS-8824-NJ"]);
   const [isSearching, setIsSearching] = useState(false);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -110,24 +109,24 @@ export default function ShipmentTracker() {
         setActiveData(SAMPLE_SHIPMENTS[code]);
       } else {
         setActiveData({
-          id: code || "SHIP-CUSTOM-88",
-          sender: "Global Logistics Hub",
-          receiver: "Verified Commercial Consignee",
-          origin: "Origin International Port",
-          destination: "Destination Freight Terminal",
-          carrier: "Alliance Express Global",
-          mode: "ocean",
-          vesselName: "Ocean Carrier Vessel (IMO: 9238411)",
+          id: code || "GMLS-CUSTOM-88",
+          sender: "Shipper Facility / Marine Terminal",
+          receiver: "Verified Consignee Delivery Dock",
+          origin: "Origin Port / Rail Ramp",
+          destination: "Destination Freight Center",
+          carrier: "GM LOGISTICS SERVICES 3PL Fleet",
+          mode: "road",
+          vesselName: "GMLS Certified Carrier Unit",
           containerId: "CONT-889012-A",
           status: "In Transit • On Schedule",
-          eta: "In 3 Business Days",
-          progressPercent: 60,
-          currentLocation: "Active Global Shipping Corridor",
+          eta: "In 2 Business Days",
+          progressPercent: 65,
+          currentLocation: "Active Interstate 48-State Shipping Lane",
           checkpoints: [
-            { title: "Consignment Dispatched", location: "Origin Facility", date: "Recent", completed: true },
-            { title: "Customs Export Validated", location: "Border Checkpoint", date: "Recent", completed: true },
-            { title: "In Transit Across Sea/Air Corridor", location: "International Route", date: "Current", completed: true, current: true },
-            { title: "Destination Terminal Clearance", location: "Target Port", date: "Upcoming", completed: false },
+            { title: "Consignment Dispatched", location: "Origin Terminal", date: "Recent", completed: true },
+            { title: "GMLS Dispatch Verification", location: "Kendall Park NJ Desk", date: "Recent", completed: true },
+            { title: "In Transit Across Highway Corridor", location: "Interstate Network", date: "Current", completed: true, current: true },
+            { title: "Destination Terminal Cross-Dock", location: "Regional Yard", date: "Upcoming", completed: false },
             { title: "Final Last-Mile Delivery", location: "Consignee Address", date: "Upcoming", completed: false },
           ],
         });
@@ -142,22 +141,22 @@ export default function ShipmentTracker() {
   };
 
   return (
-    <section id="tracking" className="relative w-full h-screen min-h-[640px] max-h-[1080px] p-2.5 sm:p-4 md:p-6 lg:p-8 bg-[#07080b] flex flex-col items-center justify-center box-border overflow-hidden">
+    <section id="tracking" className="relative w-full h-screen min-h-[640px] max-h-[1080px] p-2.5 sm:p-4 md:p-6 lg:p-8 bg-[#f8fafc] flex flex-col items-center justify-center box-border overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-zinc-900/40 via-[#07080b]/95 to-[#07080b] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(220,38,38,0.04)_0%,transparent_70%)] pointer-events-none" />
 
-      {/* Main Inner Container Frame matching hero aesthetics */}
-      <div className="relative w-full h-full max-w-[1520px] rounded-[24px] sm:rounded-[32px] md:rounded-[40px] border border-zinc-800 bg-[#0d0f15]/95 p-4 sm:p-6 md:p-8 flex flex-col justify-between overflow-hidden shadow-2xl backdrop-blur-xl">
+      {/* Main Inner Container Frame */}
+      <div className="relative w-full h-full max-w-[1520px] rounded-[24px] sm:rounded-[32px] md:rounded-[40px] border border-slate-200/90 bg-white p-4 sm:p-6 md:p-8 flex flex-col justify-between overflow-hidden shadow-[0_20px_50px_rgba(15,23,42,0.06),0_1px_3px_rgba(15,23,42,0.05)] backdrop-blur-xl">
         
         {/* Top Header & Search Bar Row */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-zinc-850">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-slate-200">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#ff5500]/15 border border-[#ff5500]/30 text-[#ff5500] text-[11px] font-semibold uppercase tracking-wider mb-1">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#dc2626]/10 border border-[#dc2626]/30 text-[#dc2626] text-[11px] font-semibold uppercase tracking-wider mb-1">
               <Search className="w-3 h-3" />
-              <span>Real-Time Radar</span>
+              <span>Real-Time 3PL Telemetry</span>
             </div>
-            <h2 className="font-bebas text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white leading-tight">
-              LIVE CONTAINER TRACKING RADAR
+            <h2 className="font-bebas text-3xl sm:text-4xl lg:text-5xl tracking-tight text-slate-900 leading-tight">
+              LIVE FREIGHT &amp; CONTAINER TRACKING
             </h2>
           </div>
 
@@ -168,27 +167,27 @@ export default function ShipmentTracker() {
                 type="text"
                 value={trackingNumber}
                 onChange={(e) => setTrackingNumber(e.target.value)}
-                placeholder="Tracking ID (e.g. IMPO-7729-US)"
-                className="w-full bg-zinc-950/90 border border-zinc-700 focus:border-[#ff5500] text-white pl-10 pr-24 py-2 rounded-full outline-none text-xs sm:text-sm transition-all"
+                placeholder="Tracking ID (e.g. GMLS-8824-NJ)"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-[#dc2626] text-slate-900 placeholder:text-slate-400 pl-10 pr-24 py-2 rounded-full outline-none text-xs sm:text-sm transition-all"
               />
-              <Package className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
+              <Package className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <button
                 type="submit"
                 disabled={isSearching}
-                className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#ff5500] hover:bg-[#e04800] text-white font-semibold px-4 py-1.5 rounded-full text-xs flex items-center gap-1.5 cursor-pointer"
+                className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#dc2626] hover:bg-[#b91c1c] text-white font-semibold px-4 py-1.5 rounded-full text-xs flex items-center gap-1.5 cursor-pointer shadow-md shadow-red-600/20"
               >
                 {isSearching ? <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" /> : <span>Track</span>}
               </button>
             </form>
-            <div className="flex items-center gap-1.5 mt-1.5 text-[11px] text-zinc-400">
-              <span className="text-zinc-500">Quick test:</span>
+            <div className="flex items-center gap-1.5 mt-1.5 text-[11px] text-slate-500">
+              <span className="text-slate-400">Live test lanes:</span>
               {Object.keys(SAMPLE_SHIPMENTS).map((key) => (
                 <button
                   key={key}
                   type="button"
                   onClick={() => loadSample(key)}
-                  className={`px-2 py-0.5 rounded transition-colors cursor-pointer text-[10px] ${
-                    activeData.id === key ? "bg-[#ff5500] text-white font-bold" : "bg-zinc-800 hover:bg-zinc-700 text-zinc-300"
+                  className={`px-2 py-0.5 rounded transition-colors cursor-pointer text-[10px] font-mono ${
+                    activeData.id === key ? "bg-[#dc2626] text-white font-bold" : "bg-slate-100 hover:bg-slate-200 text-slate-700"
                   }`}
                 >
                   {key}
@@ -202,68 +201,68 @@ export default function ShipmentTracker() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 my-auto">
           
           {/* Left Column: Vessel & Status summary */}
-          <div className="lg:col-span-4 bg-zinc-950/70 border border-zinc-800/80 rounded-2xl p-3 sm:p-4 flex flex-col justify-between">
+          <div className="lg:col-span-4 bg-slate-50/80 border border-slate-200/80 rounded-2xl p-3 sm:p-4 flex flex-col justify-between shadow-sm">
             <div>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase bg-[#ff5500]/15 text-[#ff5500] px-2 py-0.5 rounded font-bold">
+                <span className="text-xs font-mono uppercase bg-[#dc2626]/10 text-[#dc2626] px-2 py-0.5 rounded font-bold border border-[#dc2626]/20">
                   {activeData.id}
                 </span>
-                <span className="text-[11px] text-emerald-400 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Live AIS Stream
+                <span className="text-[11px] text-emerald-600 font-semibold flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Live GPS Stream
                 </span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mt-2 leading-tight">
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 mt-2 leading-tight">
                 {activeData.status}
               </h3>
-              <p className="text-[11px] text-zinc-400 mt-1">{activeData.currentLocation}</p>
+              <p className="text-[11px] text-slate-500 mt-1">{activeData.currentLocation}</p>
             </div>
 
-            <div className="space-y-2 pt-3 border-t border-zinc-850 text-xs">
+            <div className="space-y-2 pt-3 border-t border-slate-200 text-xs">
               <div className="flex justify-between">
-                <span className="text-zinc-500">Carrier:</span>
-                <span className="text-zinc-200 font-semibold">{activeData.carrier}</span>
+                <span className="text-slate-500">Carrier:</span>
+                <span className="text-slate-800 font-semibold">{activeData.carrier}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-zinc-500">Vessel:</span>
-                <span className="text-zinc-200 font-semibold">{activeData.vesselName}</span>
+                <span className="text-slate-500">Equipment / Fleet:</span>
+                <span className="text-slate-800 font-semibold">{activeData.vesselName}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-zinc-500">Container:</span>
-                <span className="text-[#ff5500] font-mono font-bold">{activeData.containerId}</span>
+                <span className="text-slate-500">Container / Trailer:</span>
+                <span className="text-[#dc2626] font-mono font-bold">{activeData.containerId}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-zinc-500">ETA Delivery:</span>
-                <span className="text-white font-bold">{activeData.eta}</span>
+                <span className="text-slate-500">ETA Delivery:</span>
+                <span className="text-slate-900 font-bold">{activeData.eta}</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Interactive Route Progress & Timeline */}
-          <div className="lg:col-span-8 bg-zinc-950/50 border border-zinc-800/60 rounded-2xl p-3 sm:p-5 flex flex-col justify-between">
+          {/* Right Column: Route Progress & Timeline */}
+          <div className="lg:col-span-8 bg-slate-50/80 border border-slate-200/80 rounded-2xl p-3 sm:p-5 flex flex-col justify-between shadow-sm">
             
             {/* Route origin to destination */}
-            <div className="grid grid-cols-2 gap-3 pb-3 border-b border-zinc-850">
+            <div className="grid grid-cols-2 gap-3 pb-3 border-b border-slate-200">
               <div>
-                <span className="text-[11px] uppercase tracking-wider text-zinc-500 font-semibold block">Origin Port</span>
-                <p className="text-xs sm:text-sm font-bold text-white mt-0.5">{activeData.origin}</p>
+                <span className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold block">Origin Terminal</span>
+                <p className="text-xs sm:text-sm font-bold text-slate-900 mt-0.5">{activeData.origin}</p>
               </div>
               <div>
-                <span className="text-[11px] uppercase tracking-wider text-zinc-500 font-semibold block">Destination Port</span>
-                <p className="text-xs sm:text-sm font-bold text-white mt-0.5">{activeData.destination}</p>
+                <span className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold block">Destination Facility</span>
+                <p className="text-xs sm:text-sm font-bold text-slate-900 mt-0.5">{activeData.destination}</p>
               </div>
             </div>
 
             {/* Visual Progress Bar */}
             <div className="my-3">
-              <div className="flex justify-between text-[11px] text-zinc-400 mb-1.5 font-medium">
-                <span>Origin Terminal</span>
-                <span className="text-[#ff5500] font-bold">{activeData.progressPercent}% Transit Completed</span>
-                <span>Destination Berth</span>
+              <div className="flex justify-between text-[11px] text-slate-600 mb-1.5 font-medium">
+                <span>Origin Gate Out</span>
+                <span className="text-[#dc2626] font-bold">{activeData.progressPercent}% Transit Completed</span>
+                <span>Destination Gate In</span>
               </div>
-              <div className="w-full h-2.5 bg-zinc-800 rounded-full overflow-hidden p-0.5">
+              <div className="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden p-0.5">
                 <div
-                  className="h-full bg-gradient-to-r from-orange-600 to-[#ff5500] rounded-full transition-all duration-700 relative"
+                  className="h-full bg-gradient-to-r from-red-600 to-[#dc2626] rounded-full transition-all duration-700 relative"
                   style={{ width: `${activeData.progressPercent}%` }}
                 />
               </div>
@@ -272,13 +271,13 @@ export default function ShipmentTracker() {
             {/* Checkpoints Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               {activeData.checkpoints.slice(0, 3).map((cp, idx) => (
-                <div key={idx} className="p-2 rounded-xl bg-zinc-900/60 border border-zinc-800/80 text-xs">
-                  <div className="flex items-center gap-1.5 font-bold text-zinc-200">
-                    <CheckCircle2 className={`w-3.5 h-3.5 ${cp.completed ? "text-emerald-400" : "text-zinc-600"}`} />
+                <div key={idx} className="p-2 rounded-xl bg-white border border-slate-200/90 text-xs shadow-sm">
+                  <div className="flex items-center gap-1.5 font-bold text-slate-800">
+                    <CheckCircle2 className={`w-3.5 h-3.5 ${cp.completed ? "text-emerald-500" : "text-slate-300"}`} />
                     <span className="truncate">{cp.title}</span>
                   </div>
-                  <span className="text-[10px] text-zinc-400 block mt-1">{cp.location}</span>
-                  <span className="text-[10px] text-[#ff5500] font-mono block mt-0.5">{cp.date}</span>
+                  <span className="text-[10px] text-slate-500 block mt-1">{cp.location}</span>
+                  <span className="text-[10px] text-[#dc2626] font-mono block mt-0.5 font-semibold">{cp.date}</span>
                 </div>
               ))}
             </div>
@@ -288,9 +287,9 @@ export default function ShipmentTracker() {
         </div>
 
         {/* Bottom Quick Indicator Status */}
-        <div className="pt-2 border-t border-zinc-850 flex flex-wrap items-center justify-between text-[11px] text-zinc-500">
-          <span>Encrypted Automated Customs Telemetry</span>
-          <span className="text-zinc-400">Updates every 15 minutes via Inmarsat-C Maritime Network</span>
+        <div className="pt-2 border-t border-slate-200 flex flex-wrap items-center justify-between text-[11px] text-slate-500">
+          <span>GM LOGISTICS SERVICES • 24/7 Dispatch Desk: 732-917-7747</span>
+          <span className="text-slate-500">Continuous GPS Highway &amp; Terminal Fleet Telemetry</span>
         </div>
 
       </div>

@@ -52,39 +52,39 @@ export default function AboutSection({ onExploreServices }: AboutSectionProps) {
   }, []);
 
   const bulletPoints = [
-    { id: 1, text: "India ➔ UAE: Rice, Fruits, Veg & Spices Export" },
-    { id: 2, text: "India ➔ Africa: Trucks, Dumpers, JCBs & Safety Tools" },
-    { id: 3, text: "China ➔ India: Kids/Mens Wear & Cosmetics Import" },
-    { id: 4, text: "Government-Verified Compliance & Port Clearance" },
+    { id: 1, text: "Operates in 48 states across USA & Canada" },
+    { id: 2, text: "20 years combined experience handling crucial tasks" },
+    { id: 3, text: "Safe, secure and reliable logistics services" },
+    { id: 4, text: "We think about your logistics, so you don't have to" },
   ];
 
   return (
     <section
       id="about"
-      className="relative w-full bg-[#07080b] flex items-center justify-center box-border overflow-hidden px-3 sm:px-6 md:px-10 lg:px-14 py-4 sm:py-6 md:py-8 select-none"
+      className="relative w-full bg-white flex items-center justify-center box-border overflow-hidden px-3 sm:px-6 md:px-10 lg:px-14 py-4 sm:py-6 md:py-8 select-none"
     >
       {/* ========================================================================= */}
-      {/* ENCLOSED BOX CONTAINER WITH SLEEK ORANGE GLOW BORDER                      */}
+      {/* ENCLOSED BOX CONTAINER WITH SLEEK BORDER AND SOFT SHADOW                  */}
       {/* ========================================================================= */}
-      <div className="relative w-full max-w-[1520px] mx-auto rounded-[28px] sm:rounded-[36px] md:rounded-[44px] border border-[#ff5500]/25 bg-[#090a0e] overflow-hidden p-5 sm:p-7 md:p-8 lg:p-10 shadow-[0_0_80px_rgba(255,85,0,0.12),0_25px_50px_rgba(0,0,0,0.9)]">
+      <div className="relative w-full max-w-[1520px] mx-auto rounded-[28px] sm:rounded-[36px] md:rounded-[44px] border border-slate-200/90 bg-slate-50/75 overflow-hidden p-5 sm:p-7 md:p-8 lg:p-10 shadow-[0_20px_50px_rgba(15,23,42,0.06),0_1px_3px_rgba(15,23,42,0.05)]">
         
         {/* 1. Background Ship Image (shio.png) Inside The Box - Shown on Desktop to prevent mobile text overlap */}
         <div className="hidden lg:block absolute inset-y-0 left-0 w-[46%] pointer-events-none z-0 overflow-hidden">
           <Image
             src="/images/shio.png"
-            alt="Container Port Ship at Sunset"
+            alt="Logistics Fleet and Seaport Operations"
             fill
             priority
-            className="object-cover object-[40%_center] opacity-90 contrast-110"
+            className="object-cover object-[40%_center] opacity-80 contrast-105"
           />
-          {/* Edge fade into dark box background on the right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#090a0e]/40 to-[#090a0e]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#090a0e]/60 via-transparent to-[#090a0e]/60" />
+          {/* Edge fade into light box background on the right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-50/50 to-slate-50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-50/80 via-transparent to-slate-50/80" />
         </div>
 
-        {/* Ambient Rich Orange Glow inside the box */}
-        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[radial-gradient(circle_at_top_right,rgba(255,85,0,0.22)_0%,transparent_65%)] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(255,85,0,0.1)_0%,transparent_60%)] pointer-events-none" />
+        {/* Ambient Subtle Red Glow inside the box */}
+        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.06)_0%,transparent_65%)] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.04)_0%,transparent_60%)] pointer-events-none" />
 
         {/* 2. Main 2-Column Content Grid */}
         <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
@@ -102,49 +102,49 @@ export default function AboutSection({ onExploreServices }: AboutSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="absolute top-0 sm:top-2 left-0 sm:left-4 w-[60%] sm:w-[58%] h-[84%] sm:h-[88%] rounded-[24px] sm:rounded-[32px] overflow-hidden border border-white/20 shadow-2xl bg-zinc-950 z-10 group cursor-pointer"
+                className="absolute top-0 sm:top-2 left-0 sm:left-4 w-[60%] sm:w-[58%] h-[84%] sm:h-[88%] rounded-[24px] sm:rounded-[32px] overflow-hidden border border-slate-200/80 shadow-[0_15px_35px_rgba(15,23,42,0.12)] bg-white z-10 group cursor-pointer"
               >
                 <Image
                   src="/images/b1.png"
-                  alt="Export Import Cargo Logistics"
+                  alt="3PL Transport and Fleet Operations"
                   fill
                   priority
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95"
                 />
                 
-                {/* Top Glass Badge: Export • Import */}
-                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-black/50 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-white shadow-md">
-                  <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-zinc-300" />
-                  <span>Export • Import</span>
+                {/* Top Glass Badge: 48 States • Canada */}
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-white/85 backdrop-blur-md border border-slate-200/80 px-3 py-1 rounded-full flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-slate-800 shadow-sm">
+                  <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-600" />
+                  <span>48 States • Canada</span>
                 </div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
               </motion.div>
 
-              {/* Front Card (b2.png): Overlapping rounded card with central play button */}
+              {/* Front Card (b2.png): Overlapping rounded card */}
               <motion.div
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.25 }}
-                className="absolute bottom-0 sm:bottom-2 right-0 sm:right-2 w-[62%] sm:w-[60%] h-[68%] sm:h-[72%] rounded-[24px] sm:rounded-[30px] overflow-hidden border-2 border-white/25 shadow-[0_25px_60px_rgba(0,0,0,0.95)] bg-zinc-900 z-20 group cursor-pointer"
+                className="absolute bottom-0 sm:bottom-2 right-0 sm:right-2 w-[62%] sm:w-[60%] h-[68%] sm:h-[72%] rounded-[24px] sm:rounded-[30px] overflow-hidden border-2 border-white shadow-[0_20px_45px_rgba(15,23,42,0.16)] bg-white z-20 group cursor-pointer"
               >
                 <Image
                   src="/images/b2.png"
-                  alt="Automated Fulfillment Forklift"
+                  alt="Freight Warehousing & Carrier Dispatch"
                   fill
                   priority
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
 
-                {/* Bottom Glass Badge: Automated Fulfillment / Speed • Safety • Scale */}
-                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 bg-black/65 backdrop-blur-md border border-white/15 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 text-left">
-                  <h4 className="text-white font-bold text-xs sm:text-[13px] leading-tight">
-                    Automated Fulfillment
+                {/* Bottom Glass Badge: Safe & Secure / On Time Delivery */}
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 text-left shadow-lg">
+                  <h4 className="text-slate-900 font-bold text-xs sm:text-[13px] leading-tight">
+                    Safe &amp; Secure 3PL
                   </h4>
-                  <p className="text-zinc-400 text-[10px] sm:text-[11px] font-medium mt-0.5">
-                    Speed • Safety • Scale
+                  <p className="text-slate-500 text-[10px] sm:text-[11px] font-medium mt-0.5">
+                    Reliability • Speed • On-Time
                   </p>
                 </div>
               </motion.div>
@@ -163,73 +163,73 @@ export default function AboutSection({ onExploreServices }: AboutSectionProps) {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="lg:col-span-6 flex flex-col gap-3.5 sm:gap-4 text-left pl-0 lg:pl-3"
           >
-            {/* Main Title: About 10X INTERNATIONAL */}
+            {/* Main Title: About GM LOGISTICS SERVICES */}
             <div>
               <h2 className="font-outfit text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
-                <span className="text-white">About </span>
-                <span className="text-[#ff5500] drop-shadow-[0_0_30px_rgba(255,85,0,0.8)] block xs:inline">10X INTERNATIONAL</span>
+                <span className="text-slate-900">About </span>
+                <span className="text-[#dc2626] block xs:inline">GM LOGISTICS SERVICES</span>
               </h2>
             </div>
 
-            {/* Subtitle / Description Paragraph */}
-            <p className="text-zinc-200 text-xs sm:text-sm md:text-[14px] leading-relaxed font-normal max-w-xl">
-              10X INTERNATIONAL is a premier government-certified export-import firm based in Ahmedabad, Gujarat. We provide streamlined ocean container freight, customs brokerage, and cross-border trade operations across global markets.
+            {/* Subtitle / Description Paragraph from PDF */}
+            <p className="text-slate-600 text-xs sm:text-sm md:text-[14px] leading-relaxed font-normal max-w-xl">
+              GMLS is a USA based fully licensed third party logistics provider that operates in 48 states across USA and Canada with a wide network of sales, operations and capacity specialists. Our team has 20 years of combined experience in handling all crucial tasks safely and on time.
             </p>
 
-            {/* 2x2 Bullet Points Grid with Orange Circular Checkmarks */}
+            {/* 2x2 Bullet Points Grid with Red Circular Checkmarks */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 py-0.5">
               {bulletPoints.map((point) => (
                 <div key={point.id} className="flex items-center gap-2.5">
-                  <span className="w-4 h-4 rounded-full border border-[#ff5500] flex items-center justify-center flex-shrink-0 shadow-[0_0_8px_rgba(255,85,0,0.5)]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500]" />
+                  <span className="w-4 h-4 rounded-full border border-[#dc2626] flex items-center justify-center flex-shrink-0 shadow-[0_0_8px_rgba(220,38,38,0.25)] bg-[#dc2626]/10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#dc2626]" />
                   </span>
-                  <span className="text-zinc-200 text-xs sm:text-[13px] md:text-sm font-medium">
+                  <span className="text-slate-700 text-xs sm:text-[13px] md:text-sm font-medium">
                     {point.text}
                   </span>
                 </div>
               ))}
             </div>
 
-            {/* Worldwide Cargo Network Pill Banner with Route Flight Curve & Orange Border Glow */}
-            <div className="relative w-full max-w-lg bg-zinc-900/90 hover:bg-zinc-850/90 border border-[#ff5500]/30 rounded-full px-3.5 sm:px-4 py-2 flex items-center justify-between shadow-[0_0_25px_rgba(255,85,0,0.12)] backdrop-blur-md transition-all duration-300 group overflow-hidden mt-0.5">
+            {/* Worldwide Cargo Network Pill Banner with Route Curve & Red Border Glow */}
+            <div className="relative w-full max-w-lg bg-white hover:bg-slate-50/90 border border-slate-200/90 rounded-full px-3.5 sm:px-4 py-2 flex items-center justify-between shadow-[0_4px_20px_rgba(15,23,42,0.06)] backdrop-blur-md transition-all duration-300 group overflow-hidden mt-0.5">
               {/* Left: 3 Overlapping Avatar Thumbnails + Text */}
               <div className="flex items-center gap-3 z-10">
                 {/* 3 Circular Avatar Stack */}
                 <div className="flex items-center -space-x-2 flex-shrink-0">
-                  <div className="relative w-7 h-7 rounded-full overflow-hidden border-2 border-zinc-900 shadow-md">
-                    <Image src="/images/b1.png" alt="Cargo Ship" fill className="object-cover" />
+                  <div className="relative w-7 h-7 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                    <Image src="/images/b1.png" alt="Fleet Operations" fill className="object-cover" />
                   </div>
-                  <div className="relative w-7 h-7 rounded-full overflow-hidden border-2 border-zinc-900 shadow-md">
-                    <Image src="/images/shio.png" alt="Air Express" fill className="object-cover" />
+                  <div className="relative w-7 h-7 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                    <Image src="/images/shio.png" alt="Freight Terminal" fill className="object-cover" />
                   </div>
-                  <div className="relative w-7 h-7 rounded-full overflow-hidden border-2 border-zinc-900 shadow-md">
-                    <Image src="/images/b2.png" alt="Warehouse Truck" fill className="object-cover" />
+                  <div className="relative w-7 h-7 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                    <Image src="/images/b2.png" alt="Carrier Dispatch" fill className="object-cover" />
                   </div>
                 </div>
 
                 {/* Text Info */}
                 <div className="flex flex-col">
-                  <h4 className="text-white font-semibold text-xs sm:text-[13px] tracking-tight group-hover:text-[#ff5500] transition-colors">
-                    10X Global Freight Network
+                  <h4 className="text-slate-900 font-semibold text-xs sm:text-[13px] tracking-tight group-hover:text-[#dc2626] transition-colors">
+                    GMLS Logistics Network
                   </h4>
-                  <p className="text-zinc-400 text-[10px] sm:text-[11px] font-normal">
-                    Ahmedabad HQ • Mundra & Hazira Ports
+                  <p className="text-slate-500 text-[10px] sm:text-[11px] font-normal">
+                    48 States &amp; Canada • 45 Promise Way, Kendall Park NJ
                   </p>
                 </div>
               </div>
 
-              {/* Right: Flight Route Curve with Orange Dot & Cross Marker */}
+              {/* Right: Flight Route Curve with Red Dot & Cross Marker */}
               <div className="relative w-24 sm:w-32 h-7 hidden xs:flex items-center justify-end z-10 pr-2">
                 <svg className="w-full h-full" viewBox="0 0 120 30" fill="none">
                   <path
                     d="M 10 24 Q 50 2 80 18 T 110 8"
-                    stroke="#ff5500"
+                    stroke="#dc2626"
                     strokeWidth="1.8"
                     strokeDasharray="3 3"
                     className="opacity-70"
                   />
-                  <circle cx="80" cy="18" r="2.5" fill="#ff5500" />
-                  <path d="M 106 5 L 114 11 M 114 5 L 106 11" stroke="#ff5500" strokeWidth="1.8" strokeLinecap="round" />
+                  <circle cx="80" cy="18" r="2.5" fill="#dc2626" />
+                  <path d="M 106 5 L 114 11 M 114 5 L 106 11" stroke="#dc2626" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
               </div>
             </div>
@@ -238,18 +238,18 @@ export default function AboutSection({ onExploreServices }: AboutSectionProps) {
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Link
                 href="/about"
-                className="group inline-flex items-center gap-3 bg-white hover:bg-zinc-100 text-[#ff5500] text-xs sm:text-sm md:text-[15px] font-bold pl-1.5 pr-5 py-1.5 rounded-full transition-all duration-300 cursor-pointer active:scale-95 shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
+                className="group inline-flex items-center gap-3 bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm md:text-[15px] font-bold pl-1.5 pr-5 py-1.5 rounded-full transition-all duration-300 cursor-pointer active:scale-95 shadow-[0_8px_20px_rgba(220,38,38,0.25)]"
               >
-                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#ff5500] group-hover:scale-105 text-white flex items-center justify-center transition-transform duration-300 shadow-md">
+                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white group-hover:scale-105 text-[#dc2626] flex items-center justify-center transition-transform duration-300 shadow-sm">
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[3]" />
                 </span>
-                <span className="tracking-wide font-bold">Discover 10X International</span>
+                <span className="tracking-wide font-bold">Discover GM Logistics</span>
               </Link>
               <Link
                 href="/services"
-                className="text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white transition-colors px-3 py-1.5"
+                className="text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#dc2626] transition-colors px-3 py-1.5"
               >
-                All Services →
+                What We Do →
               </Link>
             </div>
 

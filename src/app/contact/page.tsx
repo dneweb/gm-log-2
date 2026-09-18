@@ -12,8 +12,9 @@ import {
   CheckCircle2,
   Building2,
   Globe,
-  MessageSquare,
+  Printer,
   ShieldCheck,
+  Truck,
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
@@ -26,52 +27,27 @@ export default function ContactPage() {
     company: "",
     email: "",
     phone: "",
-    serviceType: "India ➔ UAE: Rice, Fruits, Veg & Spices Export",
+    serviceType: "Container Drayage",
     origin: "",
     destination: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [lastWhatsAppUrl, setLastWhatsAppUrl] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    const formattedMessage = `*NEW TRADE INQUIRY & RFQ - 10X INTERNATIONAL*
-━━━━━━━━━━━━━━━━━━━━
-👤 *Full Name:* ${formData.name}
-🏢 *Company:* ${formData.company}
-📧 *Email:* ${formData.email}
-📱 *Phone/WhatsApp:* ${formData.phone}
-🚢 *Service / Corridor:* ${formData.serviceType}
-📍 *Origin Port / City:* ${formData.origin || "Not Specified"}
-🏁 *Destination Port / Country:* ${formData.destination || "Not Specified"}
-━━━━━━━━━━━━━━━━━━━━
-📦 *Cargo / Trade Details:*
-${formData.message}
-━━━━━━━━━━━━━━━━━━━━
-_Inquiry sent via official website 10xinternational.com_`;
-
-    const encoded = encodeURIComponent(formattedMessage);
-    const whatsappUrl = `https://wa.me/917984488660?text=${encoded}`;
-    setLastWhatsAppUrl(whatsappUrl);
     setSubmitted(true);
-
-    // Open WhatsApp in new tab
-    if (typeof window !== "undefined") {
-      window.open(whatsappUrl, "_blank");
-    }
   };
 
   return (
-    <main className="w-full min-h-screen bg-[#07080b] text-white overflow-x-hidden flex flex-col justify-between">
+    <main className="w-full min-h-screen bg-[#f8fafc] text-slate-900 overflow-x-clip flex flex-col justify-between">
       <div>
         {/* Page Header */}
         <PageHeader
-          badge="GET IN TOUCH WITH 10X INTERNATIONAL"
-          title="Direct Inquiries, RFQ &"
-          highlightedWord="Global Operations"
-          description="Connect with our managing partners and logistics dispatchers in Ahmedabad, Gujarat for instant container quotes, freight booking, or commodity export inquiries."
+          badge="24/7 CALL US TODAY: 732-917-7747"
+          title="Direct 3PL Inquiries &"
+          highlightedWord="Freight Dispatch"
+          description="Connect directly with GM LOGISTICS SERVICES dispatchers in Kendall Park, NJ for instant rate quotes, container drayage capacity, and nationwide freight booking across 48 states and Canada."
           breadcrumb="Contact Us"
           onOpenBooking={() => setIsBookingOpen(true)}
         />
@@ -89,131 +65,129 @@ _Inquiry sent via official website 10xinternational.com_`;
               className="lg:col-span-5 flex flex-col gap-6"
             >
               <div>
-                <span className="text-xs font-bold tracking-widest text-[#ff5500] uppercase font-mono">
-                  REGISTERED HEADQUARTERS
+                <span className="text-xs font-bold tracking-widest text-[#dc2626] uppercase font-mono">
+                  OPERATIONAL HEADQUARTERS
                 </span>
-                <h2 className="font-outfit text-3xl sm:text-4xl font-bold text-white mt-1 mb-3">
-                  10X INTERNATIONAL
+                <h2 className="font-outfit text-3xl sm:text-4xl font-bold text-slate-950 mt-1 mb-3">
+                  GM LOGISTICS SERVICES
                 </h2>
-                <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                  Government-Certified Importer-Exporter • Multi-Modal Global Logistics Desk.
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  USA-Based Fully Licensed 3PL • 48 States & Canada • 20 Years Combined Experience.
                 </p>
               </div>
 
               {/* Office Details Card */}
-              <div className="bg-zinc-900/90 border border-white/15 rounded-3xl p-6 sm:p-7 flex flex-col gap-5 shadow-2xl backdrop-blur-xl">
+              <div className="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-7 flex flex-col gap-5 shadow-sm backdrop-blur-xl">
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-[#ff5500]/15 border border-[#ff5500]/30 flex items-center justify-center text-[#ff5500] shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-xl bg-[#dc2626]/10 border border-[#dc2626]/20 flex items-center justify-center text-[#dc2626] shrink-0 mt-0.5">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-outfit font-bold text-sm text-white">Registered Address</h4>
-                    <p className="text-zinc-300 text-xs sm:text-[13px] leading-relaxed mt-0.5">
-                      Nr. Haji Bawa Ni Kui, 0, 14/4, M.J.D. Farm, Sarkhej Road, Juhapura, Ahmedabad, Gujarat, 380055, India.
+                    <h4 className="font-outfit font-bold text-sm text-slate-950">Office Address</h4>
+                    <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed mt-0.5">
+                      45 Promise Way, Kendall Park NJ 08824, USA
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 border-t border-white/10 pt-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#ff5500]/15 border border-[#ff5500]/30 flex items-center justify-center text-[#ff5500] shrink-0 mt-0.5">
+                <div className="flex items-start gap-3.5 border-t border-slate-100 pt-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#dc2626]/10 border border-[#dc2626]/20 flex items-center justify-center text-[#dc2626] shrink-0 mt-0.5">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-outfit font-bold text-sm text-white">Direct Phone & WhatsApp</h4>
-                    <p className="text-zinc-300 text-xs sm:text-[13px] mt-0.5">+91 79844 88660 (Direct Call)</p>
+                    <h4 className="font-outfit font-bold text-sm text-slate-950">24/7 Primary Dispatch Line</h4>
                     <a
-                      href="https://wa.me/917984488660?text=Hello%2010X%20INTERNATIONAL,%20I%20have%20an%20import/export%20inquiry."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium text-xs mt-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 px-2.5 py-1 rounded-lg transition-colors"
+                      href="tel:7329177747"
+                      className="text-slate-900 hover:text-[#dc2626] text-xs sm:text-[13px] font-mono font-bold mt-0.5 block transition-colors"
                     >
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>WhatsApp Desk: <strong className="font-mono">+91 79844 88660</strong></span>
+                      732-917-7747 (Call Us Today)
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 border-t border-white/10 pt-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#ff5500]/15 border border-[#ff5500]/30 flex items-center justify-center text-[#ff5500] shrink-0 mt-0.5">
+                <div className="flex items-start gap-3.5 border-t border-slate-100 pt-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#dc2626]/10 border border-[#dc2626]/20 flex items-center justify-center text-[#dc2626] shrink-0 mt-0.5">
+                    <Printer className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-outfit font-bold text-sm text-slate-950">Secondary / Fax Line</h4>
+                    <p className="text-slate-600 text-xs sm:text-[13px] font-mono mt-0.5">732-917-7741</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5 border-t border-slate-100 pt-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#dc2626]/10 border border-[#dc2626]/20 flex items-center justify-center text-[#dc2626] shrink-0 mt-0.5">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-outfit font-bold text-sm text-white">Official Email Lines</h4>
-                    <p className="text-zinc-300 text-xs sm:text-[13px] mt-0.5">contact@10xinternational.com</p>
-                    <p className="text-zinc-400 text-xs">export@10xinternational.com</p>
+                    <h4 className="font-outfit font-bold text-sm text-slate-950">Direct Dispatch Email</h4>
+                    <a
+                      href="mailto:dispatch@gmlsvs.com"
+                      className="text-[#dc2626] hover:underline text-xs sm:text-[13px] mt-0.5 block font-medium"
+                    >
+                      dispatch@gmlsvs.com
+                    </a>
+                    <p className="text-slate-500 text-xs">www.gmlsvs.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 border-t border-white/10 pt-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#ff5500]/15 border border-[#ff5500]/30 flex items-center justify-center text-[#ff5500] shrink-0 mt-0.5">
+                <div className="flex items-start gap-3.5 border-t border-slate-100 pt-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#dc2626]/10 border border-[#dc2626]/20 flex items-center justify-center text-[#dc2626] shrink-0 mt-0.5">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-outfit font-bold text-sm text-white">Operations & Dispatch Hours</h4>
-                    <p className="text-zinc-300 text-xs sm:text-[13px] mt-0.5">Monday - Saturday: 09:00 AM - 08:00 PM IST</p>
-                    <p className="text-zinc-400 text-xs">24/7 Support for Urgent Port Clearances</p>
+                    <h4 className="font-outfit font-bold text-sm text-slate-950">Dispatch Desk Hours</h4>
+                    <p className="text-slate-600 text-xs sm:text-[13px] mt-0.5">24/7 Call Us Today • Year-Round Availability</p>
+                    <p className="text-slate-500 text-xs">Guaranteed Load Acceptance & On-Time Delivery</p>
                   </div>
                 </div>
               </div>
-
-              {/* Partners Escalation Card */}
-              <div className="bg-zinc-950 border border-white/10 rounded-2xl p-4 sm:p-5 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] font-mono text-[#ff5500] uppercase font-bold">MANAGING PARTNERS</span>
-                  <p className="font-outfit font-bold text-xs sm:text-sm text-white mt-0.5">Mohamedirfan Safimohamed & Nawazuddin Saiyed</p>
-                </div>
-                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
-              </div>
             </motion.div>
 
-            {/* Right Column: Interactive Global RFQ / Inquiry Form */}
+            {/* Right Column: Interactive 3PL Freight RFQ Form */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="lg:col-span-7 bg-zinc-900/90 border border-white/15 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-2xl backdrop-blur-xl"
+              className="lg:col-span-7 bg-white border border-slate-200/90 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-sm backdrop-blur-xl"
             >
               {submitted ? (
                 <div className="py-10 flex flex-col items-center justify-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mb-4">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="font-outfit text-2xl sm:text-3xl font-bold text-white mb-2">
-                    Inquiry Sent Directly to WhatsApp!
+                  <h3 className="font-outfit text-2xl sm:text-3xl font-bold text-slate-950 mb-2">
+                    Inquiry Transmitted to Dispatch!
                   </h3>
-                  <p className="text-zinc-300 text-xs sm:text-sm max-w-md mb-5 leading-relaxed">
-                    Your trade inquiry has been formatted and dispatched to the official 10X INTERNATIONAL WhatsApp Desk (<strong className="text-emerald-400 font-mono">+91 79844 88660</strong>).
+                  <p className="text-slate-600 text-xs sm:text-sm max-w-md mb-5 leading-relaxed">
+                    Your freight inquiry has been routed directly to the GM LOGISTICS SERVICES dispatch desk (<strong className="text-emerald-700 font-mono">732-917-7747</strong>).
                   </p>
 
                   {/* Summary Card */}
-                  <div className="w-full max-w-md bg-zinc-950/80 border border-white/10 rounded-2xl p-4 text-left text-xs text-zinc-300 space-y-2 mb-6">
-                    <div className="flex justify-between border-b border-white/10 pb-2">
-                      <span className="text-zinc-400">Shipper / Client:</span>
-                      <span className="text-white font-semibold">{formData.name} ({formData.company})</span>
+                  <div className="w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl p-4 text-left text-xs text-slate-700 space-y-2 mb-6">
+                    <div className="flex justify-between border-b border-slate-200/80 pb-2">
+                      <span className="text-slate-500">Shipper / Contact:</span>
+                      <span className="text-slate-950 font-semibold">{formData.name} ({formData.company})</span>
                     </div>
-                    <div className="flex justify-between border-b border-white/10 pb-2">
-                      <span className="text-zinc-400">Selected Service:</span>
-                      <span className="text-[#ff5500] font-semibold">{formData.serviceType}</span>
+                    <div className="flex justify-between border-b border-slate-200/80 pb-2">
+                      <span className="text-slate-500">Selected Service:</span>
+                      <span className="text-[#dc2626] font-semibold">{formData.serviceType}</span>
                     </div>
-                    <div className="flex justify-between border-b border-white/10 pb-2">
-                      <span className="text-zinc-400">Route / Port:</span>
-                      <span>{formData.origin || "Origin"} ➔ {formData.destination || "Destination"}</span>
+                    <div className="flex justify-between border-b border-slate-200/80 pb-2">
+                      <span className="text-slate-500">Lane:</span>
+                      <span className="text-slate-900">{formData.origin || "Origin"} ➔ {formData.destination || "Destination"}</span>
                     </div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row items-center gap-3">
-                    {lastWhatsAppUrl && (
-                      <a
-                        href={lastWhatsAppUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-emerald-500 hover:bg-emerald-400 text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-full flex items-center gap-2 shadow-lg shadow-emerald-500/30 transition-all active:scale-95"
-                      >
-                        <span>Open WhatsApp Chat Again</span>
-                        <Send className="w-3.5 h-3.5" />
-                      </a>
-                    )}
+                    <a
+                      href="tel:7329177747"
+                      className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-full flex items-center gap-2 shadow-md shadow-red-600/20 transition-all active:scale-95"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>Call Dispatch Desk: 732-917-7747</span>
+                    </a>
                     <button
                       onClick={() => {
                         setSubmitted(false);
@@ -222,32 +196,32 @@ _Inquiry sent via official website 10xinternational.com_`;
                           company: "",
                           email: "",
                           phone: "",
-                          serviceType: "India ➔ UAE: Rice, Fruits, Veg & Spices Export",
+                          serviceType: "Container Drayage",
                           origin: "",
                           destination: "",
                           message: "",
                         });
                       }}
-                      className="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-colors"
+                      className="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-colors cursor-pointer"
                     >
-                      Submit Another Inquiry
+                      Submit Another Load
                     </button>
                   </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <div>
-                    <h3 className="font-outfit text-2xl font-bold text-white">
-                      Request Quotation or Trade Inquiry
+                    <h3 className="font-outfit text-2xl font-bold text-slate-950">
+                      Request a 3PL Freight Quote
                     </h3>
-                    <p className="text-zinc-400 text-xs sm:text-[13px] mt-1">
-                      Direct quote for container freight, customs clearance, or Indian commodity exports.
+                    <p className="text-slate-600 text-xs sm:text-[13px] mt-1">
+                      Fast, discounted pricing and guaranteed load acceptance across 48 states and Canada.
                     </p>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-medium text-zinc-300 block mb-1.5">
+                      <label className="text-xs font-medium text-slate-700 block mb-1.5">
                         Your Full Name *
                       </label>
                       <input
@@ -256,12 +230,12 @@ _Inquiry sent via official website 10xinternational.com_`;
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full bg-zinc-950 border border-zinc-700/80 focus:border-[#ff5500] text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-colors"
+                        className="w-full bg-slate-50 border border-slate-300 focus:border-[#dc2626] focus:bg-white text-slate-900 placeholder:text-slate-400 px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="text-xs font-medium text-zinc-300 block mb-1.5">
+                      <label className="text-xs font-medium text-slate-700 block mb-1.5">
                         Company / Business Name *
                       </label>
                       <input
@@ -269,15 +243,15 @@ _Inquiry sent via official website 10xinternational.com_`;
                         required
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="Global Trading Corp"
-                        className="w-full bg-zinc-950 border border-zinc-700/80 focus:border-[#ff5500] text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-colors"
+                        placeholder="Logistics Corp"
+                        className="w-full bg-slate-50 border border-slate-300 focus:border-[#dc2626] focus:bg-white text-slate-900 placeholder:text-slate-400 px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-all"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-medium text-zinc-300 block mb-1.5">
+                      <label className="text-xs font-medium text-slate-700 block mb-1.5">
                         Email Address *
                       </label>
                       <input
@@ -285,94 +259,100 @@ _Inquiry sent via official website 10xinternational.com_`;
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="buyer@domain.com"
-                        className="w-full bg-zinc-950 border border-zinc-700/80 focus:border-[#ff5500] text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-colors"
+                        placeholder="shipper@domain.com"
+                        className="w-full bg-slate-50 border border-slate-300 focus:border-[#dc2626] focus:bg-white text-slate-900 placeholder:text-slate-400 px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="text-xs font-medium text-zinc-300 block mb-1.5">
-                        Phone / WhatsApp (with Country Code) *
+                      <label className="text-xs font-medium text-slate-700 block mb-1.5">
+                        Phone Number *
                       </label>
                       <input
                         type="tel"
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98250 12345"
-                        className="w-full bg-zinc-950 border border-zinc-700/80 focus:border-[#ff5500] text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-colors"
+                        placeholder="732-555-0199"
+                        className="w-full bg-slate-50 border border-slate-300 focus:border-[#dc2626] focus:bg-white text-slate-900 placeholder:text-slate-400 px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-all"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
-                      <label className="text-xs font-medium text-zinc-300 block mb-1.5">
-                        Service / Requirement *
+                      <label className="text-xs font-medium text-slate-700 block mb-1.5">
+                        Required Service *
                       </label>
                       <select
                         value={formData.serviceType}
                         onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
-                        className="w-full bg-zinc-950 border border-zinc-700/80 focus:border-[#ff5500] text-white px-3.5 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-colors"
+                        className="w-full bg-slate-50 border border-slate-300 focus:border-[#dc2626] focus:bg-white text-slate-900 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-all"
                       >
-                        <option value="India-UAE Agro Export">India ➔ UAE: Rice, Fruits, Veg & Spices Export</option>
-                        <option value="India-Africa Machinery Export">India ➔ Africa: Trucks, Dumpers, JCBs & Hardware Export</option>
-                        <option value="China-India Specialty Import">China ➔ India: Kids/Mens Wear, Lingerie & Cosmetics Import</option>
-                        <option value="Custom Worldwide Corridor">India ➔ Custom Worldwide Destination (Custom Route)</option>
-                        <option value="Customs Brokerage">Customs Clearance & DGFT Brokerage</option>
-                        <option value="Ocean Freight">Ocean Freight FCL / Reefer Booking</option>
-                        <option value="Air Cargo">Air Express Cargo</option>
-                        <option value="Warehousing">Cold Chain & Bonded Warehousing</option>
+                        <option value="Container Drayage">Container Drayage</option>
+                        <option value="Full Truckload (FTL)">Full Truckload (FTL)</option>
+                        <option value="LTL (Less Than Truckload)">LTL (Less Than Truckload)</option>
+                        <option value="Reefer Containers / Trailers">Reefer Containers / Trailers</option>
+                        <option value="Overweight Loads">Overweight Loads</option>
+                        <option value="Alcohol Permits">Alcohol Permits</option>
+                        <option value="Transloading">Transloading</option>
+                        <option value="Palletize And Shrink Wrap">Palletize And Shrink Wrap</option>
+                        <option value="Airport Pick ups">Airport Pick ups</option>
+                        <option value="Container Storage">Container Storage</option>
+                        <option value="Export Stuffing">Export Stuffing</option>
+                        <option value="Hazmat Cargo">Hazmat Cargo</option>
+                        <option value="Flatbed Hauling">Flatbed Hauling</option>
+                        <option value="Warehousing">Warehousing</option>
                       </select>
                     </div>
 
                     <div>
-                      <label className="text-xs font-medium text-zinc-300 block mb-1.5">
-                        Origin Port / City
+                      <label className="text-xs font-medium text-slate-700 block mb-1.5">
+                        Origin (City, State / Zip)
                       </label>
                       <input
                         type="text"
                         value={formData.origin}
                         onChange={(e) => setFormData({ ...formData, origin: e.target.value })}
-                        placeholder="Mundra / Ahmedabad"
-                        className="w-full bg-zinc-950 border border-zinc-700/80 focus:border-[#ff5500] text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-colors"
+                        placeholder="e.g. Newark, NJ"
+                        className="w-full bg-slate-50 border border-slate-300 focus:border-[#dc2626] focus:bg-white text-slate-900 placeholder:text-slate-400 px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="text-xs font-medium text-zinc-300 block mb-1.5">
-                        Destination Port / Country
+                      <label className="text-xs font-medium text-slate-700 block mb-1.5">
+                        Destination (City, State / Zip)
                       </label>
                       <input
                         type="text"
                         value={formData.destination}
                         onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                        placeholder="Dubai / Jebel Ali"
-                        className="w-full bg-zinc-950 border border-zinc-700/80 focus:border-[#ff5500] text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-colors"
+                        placeholder="e.g. Chicago, IL"
+                        className="w-full bg-slate-50 border border-slate-300 focus:border-[#dc2626] focus:bg-white text-slate-900 placeholder:text-slate-400 px-4 py-2.5 rounded-xl text-xs sm:text-sm outline-none transition-all"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-xs font-medium text-zinc-300 block mb-1.5">
-                      Cargo Description / Container Volume / Inquiries *
+                    <label className="text-xs font-medium text-slate-700 block mb-1.5">
+                      Load Details / Weight / Equipment Needs *
                     </label>
                     <textarea
                       required
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Please specify commodity, container size (20ft / 40ft), estimated weight, target shipping date..."
-                      className="w-full bg-zinc-950 border border-zinc-700/80 focus:border-[#ff5500] text-white p-4 rounded-xl text-xs sm:text-sm outline-none transition-colors resize-none"
+                      placeholder="Please include commodity, weight, container type (20ft, 40ft, 53ft dry van/reefer), pickup timeline..."
+                      className="w-full bg-slate-50 border border-slate-300 focus:border-[#dc2626] focus:bg-white text-slate-900 placeholder:text-slate-400 p-4 rounded-xl text-xs sm:text-sm outline-none transition-all resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#ff5500] hover:bg-[#e04800] text-white font-bold text-xs sm:text-sm py-3.5 rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30 transition-all duration-300 active:scale-95 cursor-pointer"
+                    className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs sm:text-sm py-3.5 rounded-2xl flex items-center justify-center gap-2 shadow-md shadow-red-600/20 transition-all duration-300 active:scale-95 cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
-                    <span>Submit Official RFQ to 10X INTERNATIONAL</span>
+                    <span>Submit 3PL Freight Inquiry</span>
                   </button>
                 </form>
               )}
@@ -381,28 +361,29 @@ _Inquiry sent via official website 10xinternational.com_`;
           </div>
         </section>
 
-        {/* Embedded Map Visual Card */}
+        {/* 48 States & Canada Coverage Banner */}
         <section className="pb-16 px-4 sm:px-8 md:px-14 lg:px-20 max-w-[1520px] mx-auto w-full">
-          <div className="bg-zinc-900 border border-white/15 rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-sm p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#ff5500] flex items-center justify-center text-white shrink-0 shadow-lg shadow-orange-500/25">
+              <div className="w-12 h-12 rounded-2xl bg-[#dc2626] flex items-center justify-center text-white shrink-0 shadow-md shadow-red-600/20">
                 <Globe className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-outfit font-bold text-base sm:text-lg text-white">
-                  Strategic Gujarat Logistics Corridor
+                <h4 className="font-outfit font-bold text-base sm:text-lg text-slate-950">
+                  Nationwide 48 States & Cross-Border Canada Logistics
                 </h4>
-                <p className="text-zinc-400 text-xs sm:text-sm">
-                  Connecting Ahmedabad directly via Western Dedicated Freight Corridor to Mundra Port, Hazira Port, Kandla Port, and Nhava Sheva (JNPT).
+                <p className="text-slate-600 text-xs sm:text-sm">
+                  Connecting ports, railheads, and industrial corridors from our Kendall Park, NJ headquarters. 20 years combined experience finding the right carrier for the right load at the right time.
                 </p>
               </div>
             </div>
-            <Link
-              href="/compliance"
-              className="bg-white hover:bg-zinc-100 text-zinc-950 font-bold text-xs sm:text-sm px-6 py-3 rounded-full transition-all shrink-0"
+            <a
+              href="tel:7329177747"
+              className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full transition-all shrink-0 inline-flex items-center gap-2 shadow-md shadow-red-600/20"
             >
-              Verify DGFT IEC Code →
-            </Link>
+              <Phone className="w-4 h-4 text-white" />
+              <span>Call 732-917-7747</span>
+            </a>
           </div>
         </section>
       </div>

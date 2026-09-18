@@ -69,42 +69,31 @@ export default function FreightManagement() {
   }, []);
 
   const filterTags = [
-    { name: "India ➔ UAE Agro Export", href: "/products" },
-    { name: "India ➔ Africa Machinery", href: "/products" },
-    { name: "China ➔ India Imports", href: "/products" },
-    { name: "DGFT Port Brokerage", href: "/compliance" },
+    { name: "Container Drayage", href: "/services" },
+    { name: "Full Truckload (FTL)", href: "/services" },
+    { name: "LTL & Reefer Trailers", href: "/services" },
+    { name: "Hazmat & Permits", href: "/compliance" },
   ];
 
   const articles = [
     {
       id: 1,
       image: "/images/service_cold_chain.jpg",
-      alt: "Smart Cold Chain & Warehouse Logistics Management",
-      title: "Real-Time Digital Cargo Tracking & Optimized Port Dispatch Operations",
+      alt: "Safe, Secure and Reliable Logistics Across 48 States",
+      title: "Safe, Secure and Reliable Logistics Services Across 48 States & Canada",
     },
     {
       id: 2,
       image: "/images/service_customs_clearance.jpg",
-      alt: "Customs Inspection and Port Freight Forwarding",
-      title: "Direct Port Brokerage, Container Sealing & Temperature-Controlled Handling",
+      alt: "Discounted Rates and Optimal Carrier Selection",
+      title: "Discounted Rates & Finding The Right Carrier For The Right Load At The Right Time",
     },
-  ];
-
-  const tickerItems = [
-    { text: "OCEAN CARGO CARRIER", icon: Ship },
-    { text: "SECURE AIR FREIGHT", icon: Plane },
-    { text: "DGFT CUSTOMS COMPLIANCE", icon: ShieldCheck },
-    { text: "FAST EXPRESS DISPATCH", icon: Zap },
-    { text: "SMART BONDED WAREHOUSING", icon: Warehouse },
-    { text: "24/7 LIVE SATELLITE TRACKING", icon: Radio },
-    { text: "CONTAINER MULTIMODAL TRUCKING", icon: Truck },
-    { text: "VERIFIED PORT DOCUMENTATION", icon: FileCheck2 },
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[#07080b] text-white pt-10 sm:pt-14 md:pt-20 pb-0 overflow-hidden"
+      className="relative w-full bg-white text-slate-900 pt-10 sm:pt-14 md:pt-20 pb-12 sm:pb-16 overflow-hidden"
     >
       {/* 1. Main Header & Interactive Navigation Tabs */}
       <div className="relative z-10 w-full max-w-[1520px] mx-auto px-4 sm:px-8 md:px-14 lg:px-20 mb-8 sm:mb-12">
@@ -112,16 +101,19 @@ export default function FreightManagement() {
           
           {/* Main Title Section */}
           <div className="max-w-2xl">
+            <div className="text-xs font-mono font-bold tracking-widest text-[#dc2626] uppercase mb-1">
+              FLEET RELIABILITY &amp; COVERAGE
+            </div>
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight"
+              className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight"
             >
-              Freight Forwarding &amp; <br />
-              <span className="text-[#ff5500] drop-shadow-[0_4px_25px_rgba(255,85,0,0.4)]">
-                Trade Route Logistics
+              3PL Freight Operations &amp; <br />
+              <span className="text-[#dc2626]">
+                Fleet Logistics
               </span>
             </motion.h2>
           </div>
@@ -138,7 +130,7 @@ export default function FreightManagement() {
               <Link
                 key={idx}
                 href={tag.href}
-                className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 bg-zinc-900/90 text-zinc-300 hover:text-white hover:bg-zinc-800 border border-white/10 hover:border-[#ff5500]/50 shadow-md backdrop-blur-md cursor-pointer"
+                className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 bg-slate-50 text-slate-700 hover:text-[#dc2626] hover:bg-slate-100 border border-slate-200/90 hover:border-[#dc2626]/50 shadow-sm backdrop-blur-md cursor-pointer"
               >
                 {tag.name}
               </Link>
@@ -158,23 +150,23 @@ export default function FreightManagement() {
             className="lg:col-span-6 flex flex-col justify-between gap-5 sm:gap-6"
           >
             {/* Grand Hero Image Card */}
-            <div className="relative w-full h-[260px] sm:h-[320px] md:h-[380px] rounded-[24px] sm:rounded-[32px] overflow-hidden border border-white/15 bg-zinc-900 shadow-2xl group cursor-pointer">
+            <div className="relative w-full h-[260px] sm:h-[320px] md:h-[380px] rounded-[24px] sm:rounded-[32px] overflow-hidden border border-slate-200/80 bg-slate-50 shadow-[0_15px_35px_rgba(15,23,42,0.08)] group cursor-pointer">
               <Image
                 src="/images/f1.png"
-                alt="Freight logistics worker in reflective safety vest with cargo trucks"
+                alt="Freight logistics worker with cargo trucks"
                 fill
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-95"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent" />
               
               {/* Bottom Caption Inside Card */}
               <div className="absolute bottom-4 sm:bottom-5 left-5 right-5 flex items-end justify-between">
                 <p className="text-white font-medium text-sm sm:text-base md:text-lg max-w-sm leading-snug drop-shadow-md">
-                  Fast, Secure, And Reliable Freight Operations Worldwide
+                  Guaranteed Load Acceptance &amp; On Time Delivery
                 </p>
                 <Link
                   href="/services"
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 hover:bg-[#ff5500] backdrop-blur-md flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 shadow-md border border-white/30"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 hover:bg-[#dc2626] backdrop-blur-md flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 shadow-md border border-white/30"
                 >
                   <ArrowUpRight className="w-5 h-5 text-white" />
                 </Link>
@@ -183,9 +175,8 @@ export default function FreightManagement() {
 
             {/* Bottom Paragraph */}
             <div className="pt-1">
-              <p className="text-zinc-300 text-xs sm:text-[13px] md:text-sm leading-relaxed max-w-xl font-normal">
-                Efficient Transportation Management For Air, Sea, And Ground Logistics. We Help
-                Businesses Streamline Shipping Operations With Secure Handling And Tracking.
+              <p className="text-slate-600 text-xs sm:text-[13px] md:text-sm leading-relaxed max-w-xl font-normal">
+                GMLS thrives to provide logistics beyond expectations. Our wide network of sales, operations and capacity specialists provides year-round fleet availability with 20 years of combined experience.
               </p>
             </div>
           </div>
@@ -202,22 +193,22 @@ export default function FreightManagement() {
                 className="flex flex-col gap-2.5 sm:gap-3 group cursor-pointer transition-transform duration-300 hover:-translate-y-1"
               >
                 {/* Horizontal Image Banner */}
-                <div className="relative w-full h-[120px] sm:h-[145px] md:h-[160px] rounded-[20px] sm:rounded-[26px] md:rounded-[30px] overflow-hidden border border-white/15 bg-zinc-900 shadow-xl">
+                <div className="relative w-full h-[120px] sm:h-[145px] md:h-[160px] rounded-[20px] sm:rounded-[26px] md:rounded-[30px] overflow-hidden border border-slate-200/80 bg-slate-50 shadow-[0_10px_25px_rgba(15,23,42,0.06)]">
                   <Image
                     src={item.image}
                     alt={item.alt}
                     fill
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-95"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                 </div>
 
-                {/* Title + Action Arrow Block (Clean without date clutter) */}
+                {/* Title + Action Arrow Block */}
                 <div className="flex items-center justify-between gap-4 px-2">
-                  <h3 className="font-outfit text-white group-hover:text-[#ff5500] font-semibold text-xs sm:text-sm md:text-[15px] leading-snug transition-colors flex-1">
+                  <h3 className="font-outfit text-slate-900 group-hover:text-[#dc2626] font-semibold text-xs sm:text-sm md:text-[15px] leading-snug transition-colors flex-1">
                     {item.title}
                   </h3>
-                  <div className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-[#ff5500] flex items-center justify-center text-white transition-colors shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-[#dc2626] flex items-center justify-center text-slate-700 group-hover:text-white transition-colors shrink-0 shadow-sm">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -227,34 +218,6 @@ export default function FreightManagement() {
 
         </div>
 
-      </div>
-
-      {/* 3. Bottom Bright Orange Ticker Ribbon (Infinite Running Marquee) */}
-      <div className="relative z-20 w-full bg-[#ff5500] text-zinc-950 py-2.5 sm:py-3 overflow-hidden shadow-[0_-5px_25px_rgba(255,85,0,0.3)]">
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            ease: "linear",
-            duration: 20,
-            repeat: Infinity,
-          }}
-          className="flex w-max items-center gap-10 sm:gap-16 whitespace-nowrap"
-        >
-          {[...tickerItems, ...tickerItems].map((ticker, index) => {
-            const Icon = ticker.icon;
-            return (
-              <div
-                key={index}
-                className="flex items-center gap-3 sm:gap-4 font-outfit font-bold text-xs sm:text-sm md:text-base lg:text-lg text-zinc-950 whitespace-nowrap tracking-wide"
-              >
-                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center shadow-md flex-shrink-0">
-                  <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#ff5500] stroke-[2.5]" />
-                </div>
-                <span>{ticker.text}</span>
-              </div>
-            );
-          })}
-        </motion.div>
       </div>
     </section>
   );

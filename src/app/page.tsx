@@ -5,9 +5,11 @@ import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import FreightManagement from "@/components/FreightManagement";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import Preloader from "@/components/Preloader";
+import Navbar from "@/components/Navbar";
+import MarqueeTicker from "@/components/MarqueeTicker";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -24,14 +26,20 @@ export default function Home() {
   };
 
   return (
-    <main className="w-full min-h-screen bg-[#07080b] text-white overflow-x-hidden">
+    <main className="w-full min-h-screen bg-[#f8fafc] text-slate-900 overflow-x-clip">
       {/* Starting Screen Cinematic Preloader */}
       <Preloader />
 
-      {/* 1. Exact Replica Hero Section */}
+      {/* Sticky Full-Width Edge-to-Edge Header */}
+      <Navbar onOpenBooking={() => handleOpenBooking()} />
+
+      {/* 1. Hero Section */}
       <section className="w-full">
         <Hero onOpenBooking={() => handleOpenBooking()} />
       </section>
+
+      {/* Running Marquee Ticker Ribbon (Directly after Hero) */}
+      <MarqueeTicker />
 
       {/* 2. About Project Section */}
       <section className="w-full">
@@ -51,13 +59,8 @@ export default function Home() {
         <FreightManagement />
       </section>
 
-      {/* 5. Why Choose Us, Giant Port Crane & Curved Orange Footer */}
-      <section className="w-full">
-        <WhyChooseUs onDiscoverWork={() => {
-          const el = document.getElementById("features");
-          if (el) el.scrollIntoView({ behavior: "smooth" });
-        }} />
-      </section>
+      {/* Global Consistent Footer */}
+      <Footer />
 
       {/* Interactive Multi-Step Freight Booking Modal */}
       <BookingModal

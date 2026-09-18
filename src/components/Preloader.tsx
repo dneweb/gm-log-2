@@ -31,14 +31,14 @@ export default function Preloader() {
             y: "-100%",
             transition: { duration: 0.85, ease: [0.77, 0, 0.175, 1] },
           }}
-          className="fixed inset-0 z-[9999] bg-[#07080b] flex flex-col items-center justify-center select-none overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center select-none overflow-hidden"
         >
           {/* Deep Ambient Radial Glows */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2 }}
-            className="absolute w-[500px] sm:w-[700px] h-[500px] sm:h-[700px] bg-[radial-gradient(circle,rgba(255,85,0,0.18)_0%,transparent_65%)] rounded-full pointer-events-none"
+            className="absolute w-[500px] sm:w-[700px] h-[500px] sm:h-[700px] bg-[radial-gradient(circle,rgba(220,38,38,0.08)_0%,transparent_65%)] rounded-full pointer-events-none"
           />
 
           {/* Animated Energy Rings */}
@@ -54,7 +54,7 @@ export default function Preloader() {
                 duration: 1.6,
                 ease: "easeOut",
               }}
-              className="absolute w-52 sm:w-64 h-52 sm:h-64 rounded-full border border-[#ff5500]/35 bg-[radial-gradient(circle,rgba(255,85,0,0.22)_0%,transparent_70%)]"
+              className="absolute w-52 sm:w-64 h-52 sm:h-64 rounded-full border border-[#dc2626]/20 bg-[radial-gradient(circle,rgba(220,38,38,0.06)_0%,transparent_70%)]"
             />
 
             {/* Rotating Thin Dashed Orbit Ring */}
@@ -65,10 +65,10 @@ export default function Preloader() {
                 duration: 8,
                 ease: "linear",
               }}
-              className="absolute w-60 sm:w-72 h-60 sm:h-72 rounded-full border border-dashed border-[#ff5500]/30"
+              className="absolute w-60 sm:w-72 h-60 sm:h-72 rounded-full border border-dashed border-[#dc2626]/25"
             />
 
-            {/* Central Main Logo with Smooth Entrance & Float */}
+            {/* Central Main Logo Space with Smooth Entrance & Float */}
             <motion.div
               initial={{ opacity: 0, scale: 0.75, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -78,14 +78,14 @@ export default function Preloader() {
               }}
               className="relative z-10 flex flex-col items-center gap-4"
             >
-              {/* Logo Image */}
-              <div className="relative h-14 sm:h-16 md:h-20 w-[180px] sm:w-[220px] md:w-[260px] drop-shadow-[0_0_35px_rgba(255,85,0,0.6)]">
+              {/* Logo */}
+              <div className="relative h-20 sm:h-24 md:h-28 w-[240px] sm:w-[280px] md:w-[320px] flex items-center justify-center drop-shadow-[0_8px_20px_rgba(15,23,42,0.06)]">
                 <Image
-                  src="/images/lo.png"
-                  alt="10X INTERNATIONAL Logo"
+                  src="/logo.jpg"
+                  alt="GM LOGISTICS SERVICES"
                   fill
-                  priority
                   className="object-contain"
+                  priority
                 />
               </div>
 
@@ -94,11 +94,11 @@ export default function Preloader() {
                 initial={{ opacity: 0, y: 8, letterSpacing: "0.1em" }}
                 animate={{ opacity: 1, y: 0, letterSpacing: "0.25em" }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="flex items-center gap-2 text-zinc-400 text-[11px] sm:text-xs font-medium uppercase font-outfit"
+                className="flex items-center gap-2 text-slate-700 text-[11px] sm:text-xs font-semibold uppercase font-outfit"
               >
-                <span>Import Smarter</span>
-                <span className="w-1 h-1 rounded-full bg-[#ff5500]" />
-                <span className="text-[#ff5500]">Export Faster</span>
+                <span>Logistics Beyond</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#dc2626]" />
+                <span className="text-[#dc2626]">Expectation</span>
               </motion.div>
             </motion.div>
           </div>

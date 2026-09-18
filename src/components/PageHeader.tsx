@@ -24,13 +24,15 @@ export default function PageHeader({
   onOpenBooking,
 }: PageHeaderProps) {
   return (
-    <div className="relative w-full bg-[#07080b] pt-1.5 sm:pt-2 md:pt-3 px-3 sm:px-6 md:px-10 lg:px-14 pb-12 sm:pb-16 overflow-hidden select-none">
-      {/* Top Navbar */}
+    <div className="w-full">
+      {/* Top Full-Width Edge-to-Edge Sticky Navbar */}
       <Navbar onOpenBooking={onOpenBooking || (() => {})} />
 
+      <div className="relative w-full bg-gradient-to-b from-slate-100 via-slate-50 to-white border-b border-slate-200/80 pb-12 sm:pb-16 overflow-hidden select-none">
+
       {/* Ambient Radial Background Flare */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] h-[380px] bg-[radial-gradient(ellipse_at_top,rgba(255,85,0,0.18)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute -top-24 right-10 w-80 h-80 bg-[radial-gradient(circle,rgba(255,85,0,0.08)_0%,transparent_65%)] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] h-[380px] bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.06)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute -top-24 right-10 w-80 h-80 bg-[radial-gradient(circle,rgba(37,99,235,0.03)_0%,transparent_65%)] pointer-events-none" />
 
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-[1520px] mx-auto pt-10 sm:pt-14 md:pt-16 flex flex-col items-center text-center px-4">
@@ -39,17 +41,17 @@ export default function PageHeader({
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-white/[0.08] backdrop-blur-md border border-white/15 px-4 py-1.5 rounded-full text-xs font-medium text-zinc-300 mb-5 shadow-lg"
+          className="inline-flex items-center gap-2 bg-white/85 backdrop-blur-md border border-slate-200/90 px-4 py-1.5 rounded-full text-xs font-medium text-slate-700 mb-5 shadow-sm"
         >
           <Link
             href="/"
-            className="flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors"
+            className="flex items-center gap-1.5 text-slate-500 hover:text-slate-900 transition-colors"
           >
             <Home className="w-3.5 h-3.5" />
             <span>Home</span>
           </Link>
-          <ChevronRight className="w-3 h-3 text-zinc-500" />
-          <span className="text-[#ff5500] font-semibold">{breadcrumb}</span>
+          <ChevronRight className="w-3 h-3 text-slate-400" />
+          <span className="text-[#dc2626] font-semibold">{breadcrumb}</span>
         </motion.div>
 
         {/* Small Badge */}
@@ -57,21 +59,21 @@ export default function PageHeader({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-xs sm:text-sm font-semibold tracking-widest text-[#ff5500] uppercase font-mono mb-2"
+          className="text-xs sm:text-sm font-semibold tracking-widest text-[#dc2626] uppercase font-mono mb-2"
         >
           {badge}
         </motion.span>
 
-        {/* Main Title with Neon Highlight */}
+        {/* Main Title */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-outfit text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white max-w-4xl leading-[1.1] mb-4 drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]"
+          className="font-outfit text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-950 max-w-4xl leading-[1.1] mb-4"
         >
           {title}{" "}
           {highlightedWord && (
-            <span className="text-[#ff5500] drop-shadow-[0_0_35px_rgba(255,85,0,0.7)]">
+            <span className="text-[#dc2626]">
               {highlightedWord}
             </span>
           )}
@@ -82,11 +84,12 @@ export default function PageHeader({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-zinc-300 text-xs sm:text-sm md:text-base max-w-2xl leading-relaxed font-normal"
+          className="text-slate-600 text-xs sm:text-sm md:text-base max-w-2xl leading-relaxed font-normal"
         >
           {description}
         </motion.p>
       </div>
+    </div>
     </div>
   );
 }

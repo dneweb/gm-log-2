@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import Navbar from "@/components/Navbar";
 import gsap from "gsap";
 
 interface HeroProps {
@@ -185,26 +184,23 @@ export default function Hero({ onOpenBooking }: HeroProps) {
     <section
       ref={heroRef}
       id="home"
-      className="relative w-full h-screen min-h-[640px] max-h-[1080px] bg-[#090a0d] flex flex-col justify-between box-border overflow-hidden select-none"
+      className="relative w-full h-screen min-h-[640px] max-h-[1080px] bg-[#f8fafc] flex flex-col justify-between box-border overflow-hidden select-none"
     >
-      {/* Background dark maritime seaport port overlay with GSAP parallax */}
+      {/* Background maritime seaport port overlay with GSAP parallax */}
       <div ref={bgRef} className="absolute -inset-10 z-0 scale-110">
         <Image
           src="/images/port_background.jpg"
-          alt="Nighttime Industrial Seaport Container Port"
+          alt="Industrial Seaport Container Port"
           fill
           priority
-          className="object-cover object-center brightness-[0.42] contrast-125"
+          className="object-cover object-center brightness-[0.92] contrast-[1.05]"
         />
-        {/* Dark radial and vignette overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#090a0d] via-transparent to-[#090a0d]/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,#090a0d_90%)]" />
+        {/* Light atmospheric vignette overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-100/95 via-white/60 to-slate-50/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.7)_0%,rgba(241,245,249,0.95)_85%)]" />
       </div>
 
-      {/* 1. Floating Pill Navbar */}
-      <div className="relative z-40 w-full pt-1.5 sm:pt-2 px-2 sm:px-6 md:px-8">
-        <Navbar onOpenBooking={onOpenBooking || (() => {})} />
-      </div>
+
 
       {/* ========================================================================= */}
       {/* MOBILE SCREEN LAYOUT (< md)                                               */}
@@ -232,27 +228,27 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         {/* Center: Headline + Text + CTA */}
         <div className="my-auto w-full flex flex-col items-center text-center z-30 pt-20 pb-28">
           <div className="flex flex-col items-center">
-            <h1 className="font-bebas text-[54px] xs:text-[66px] leading-[0.88] tracking-wide text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.95)]">
+            <h1 className="font-bebas text-[54px] xs:text-[66px] leading-[0.88] tracking-wide text-slate-950 drop-shadow-[0_4px_16px_rgba(15,23,42,0.12)]">
               IMPORT SMARTER
             </h1>
-            <h2 className="font-bebas text-[54px] xs:text-[66px] leading-[0.88] tracking-wide text-[#ff5500] drop-shadow-[0_10px_35px_rgba(255,85,0,0.6)] mt-0.5">
+            <h2 className="font-bebas text-[54px] xs:text-[66px] leading-[0.88] tracking-wide text-[#dc2626] drop-shadow-[0_4px_20px_rgba(220,38,38,0.25)] mt-0.5">
               EXPORT FASTER
             </h2>
           </div>
 
-          <p className="text-zinc-300 text-xs xs:text-[13px] leading-relaxed font-normal max-w-[340px] drop-shadow-md mt-2.5 mb-4">
-            Exporting Agro, Rice & Spices to UAE; Machinery & Hardware to Africa; and Importing Kids/Mens Wear & Cosmetics from China to India.
+          <p className="text-slate-600 text-xs xs:text-[13px] leading-relaxed font-normal max-w-[340px] drop-shadow-sm mt-2.5 mb-4">
+            GM LOGISTICS SERVICES: USA based fully licensed 3PL provider operating in 48 states across USA and Canada. Safe, secure and reliable logistics.
           </p>
 
           <div>
             <button
               onClick={onOpenBooking}
-              className="group inline-flex items-center gap-2.5 bg-white hover:bg-zinc-100 text-[#ff5500] text-xs font-bold pl-1.5 pr-4 py-1.5 rounded-full transition-all duration-300 shadow-xl active:scale-95 cursor-pointer"
+              className="group inline-flex items-center gap-2.5 bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs font-bold pl-1.5 pr-4 py-1.5 rounded-full transition-all duration-300 shadow-lg shadow-red-600/25 active:scale-95 cursor-pointer"
             >
-              <span className="w-7 h-7 rounded-full bg-[#ff5500] text-white flex items-center justify-center shadow-md">
+              <span className="w-7 h-7 rounded-full bg-white text-[#dc2626] flex items-center justify-center shadow-md">
                 <ChevronRight className="w-3.5 h-3.5 stroke-[3]" />
               </span>
-              <span className="tracking-wide font-bold">Get Started</span>
+              <span className="tracking-wide font-bold">Get Instant Quote</span>
             </button>
           </div>
         </div>
@@ -270,7 +266,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               alt="3D Heavy Cargo Shipping Container in Lower Right"
               fill
               priority
-              className="object-contain object-bottom-right drop-shadow-[0_25px_50px_rgba(0,0,0,0.98)]"
+              className="object-contain object-bottom-right drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
             />
           </div>
         </motion.div>
@@ -288,7 +284,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             {/* IMPORT SMARTER with Crane Hook Attached Directly to 'M' */}
             <h1
               ref={title1Ref}
-              className="font-bebas text-[72px] md:text-[86px] lg:text-[112px] xl:text-[136px] 2xl:text-[148px] leading-[0.88] tracking-wide text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.95)]"
+              className="font-bebas text-[72px] md:text-[86px] lg:text-[112px] xl:text-[136px] 2xl:text-[148px] leading-[0.88] tracking-wide text-slate-950 drop-shadow-[0_4px_16px_rgba(15,23,42,0.12)]"
             >
               I<span className="relative inline-block">
                 M
@@ -301,7 +297,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 >
                   <span
                     ref={importContainerRef}
-                    className="relative block w-full h-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.98)] origin-top will-change-transform"
+                    className="relative block w-full h-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] origin-top will-change-transform"
                   >
                     <Image
                       src="/images/i.png"
@@ -315,14 +311,32 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               </span>PORT SMARTER
             </h1>
 
-            {/* EXPORT FASTER Shifted To The Right Edge with High Z-Index so it is never covered */}
+            {/* EXPORT FASTER Shifted To The Right Edge with Floating Container Directly Beneath */}
             <div className="w-full flex justify-end relative z-30 pr-0 -mr-2 sm:-mr-4 md:-mr-6 lg:-mr-10 xl:-mr-12 mt-1 sm:mt-2 lg:mt-3 pointer-events-none">
-              <h2
-                ref={title2Ref}
-                className="font-bebas text-[72px] md:text-[86px] lg:text-[112px] xl:text-[136px] 2xl:text-[148px] leading-[0.88] tracking-wide text-[#ff5500] drop-shadow-[0_10px_35px_rgba(255,85,0,0.65)] pointer-events-auto"
-              >
-                EXPORT FASTER
-              </h2>
+              <div className="relative inline-flex flex-col items-end">
+                <h2
+                  ref={title2Ref}
+                  className="font-bebas text-[72px] md:text-[86px] lg:text-[112px] xl:text-[136px] 2xl:text-[148px] leading-[0.88] tracking-wide text-[#dc2626] drop-shadow-[0_4px_20px_rgba(220,38,38,0.3)] pointer-events-auto relative z-20"
+                >
+                  EXPORT FASTER
+                </h2>
+
+                {/* Floating 3D EXPORT Container with reduced space directly under EXPORT FASTER */}
+                <div
+                  ref={exportContainerRef}
+                  className="absolute top-[82%] sm:top-[85%] md:top-[88%] right-0 w-[420px] md:w-[500px] lg:w-[640px] xl:w-[760px] 2xl:w-[860px] aspect-[16/10.5] pointer-events-none z-10 select-none will-change-transform"
+                >
+                  <div className="relative w-full h-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.45)]">
+                    <Image
+                      src="/images/e.png"
+                      alt="3D Heavy Cargo Shipping Container with EXPORT text"
+                      fill
+                      className="object-contain object-top-right"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -331,39 +345,23 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         <div className="relative z-30 max-w-lg lg:max-w-xl flex flex-col gap-3 sm:gap-4 mb-2 sm:mb-4 lg:mb-6">
           <p
             ref={subtitleRef}
-            className="text-zinc-300 text-xs sm:text-[13px] md:text-sm lg:text-[15px] leading-relaxed font-normal max-w-sm sm:max-w-md drop-shadow-md"
+            className="text-slate-600 text-xs sm:text-[13px] md:text-sm lg:text-[15px] leading-relaxed font-normal max-w-sm sm:max-w-md drop-shadow-sm"
           >
-            10X INTERNATIONAL: Government-certified export-import operations. Exporting Agro & Spices to UAE; Heavy Machinery & Hardware to Africa; and Importing Apparel & Beauty Cosmetics from China to India.
+            GM LOGISTICS SERVICES: USA based fully licensed third party logistics provider operating in 48 states across USA and Canada. 20 years of combined experience in handling all crucial tasks safely and on time.
           </p>
 
           <div ref={ctaRef} className="flex items-center pt-0.5 sm:pt-1">
             <button
               onClick={onOpenBooking}
-              className="group inline-flex items-center gap-2.5 sm:gap-3 bg-white hover:bg-zinc-100 text-[#ff5500] text-xs sm:text-sm font-bold pl-1.5 pr-4 sm:pr-5 py-1.5 rounded-full transition-all duration-300 cursor-pointer active:scale-95 shadow-[0_10px_25px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(255,85,0,0.4)]"
+              className="group inline-flex items-center gap-2.5 sm:gap-3 bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-bold pl-1.5 pr-4 sm:pr-5 py-1.5 rounded-full transition-all duration-300 cursor-pointer active:scale-95 shadow-lg shadow-red-600/25 hover:shadow-red-600/40"
             >
-              <span className="w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9 rounded-full bg-[#ff5500] group-hover:scale-105 text-white flex items-center justify-center transition-transform duration-300 shadow-md flex-shrink-0">
+              <span className="w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9 rounded-full bg-white text-[#dc2626] group-hover:scale-105 flex items-center justify-center transition-transform duration-300 shadow-md flex-shrink-0">
                 <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[3]" />
               </span>
-              <span className="tracking-wide text-[#ff5500] font-bold text-xs sm:text-sm lg:text-[15px]">
-                Get Started
+              <span className="tracking-wide text-white font-bold text-xs sm:text-sm lg:text-[15px]">
+                Instant Quote • 732-917-7747
               </span>
             </button>
-          </div>
-        </div>
-
-        {/* Desktop 3D EXPORT Container Grounded at Bottom Right with Proportional Viewport Scaling */}
-        <div
-          ref={exportContainerRef}
-          className="absolute bottom-0 right-0 sm:right-2 md:right-4 w-[360px] md:w-[440px] lg:w-[560px] xl:w-[680px] 2xl:w-[800px] max-h-[38vh] md:max-h-[44vh] lg:max-h-[50vh] xl:max-h-[56vh] aspect-[16/10] pointer-events-none z-10 select-none will-change-transform"
-        >
-          <div className="relative w-full h-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.98)]">
-            <Image
-              src="/images/e.png"
-              alt="3D Heavy Cargo Shipping Container with EXPORT text"
-              fill
-              className="object-contain object-bottom-right"
-              priority
-            />
           </div>
         </div>
 

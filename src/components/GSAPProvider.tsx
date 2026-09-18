@@ -41,10 +41,10 @@ export default function GSAPProvider({ children }: { children: React.ReactNode }
 
   return (
     <>
-      {/* Global Dynamic Orange Ambient Spotlight that follows cursor */}
+      {/* Global Dynamic Crimson Red & Cobalt Ambient Spotlight that follows cursor */}
       <div
         ref={cursorGlowRef}
-        className="fixed top-0 left-0 w-[450px] h-[450px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(255,85,0,0.07)_0%,transparent_70%)] rounded-full pointer-events-none z-50 mix-blend-screen hidden md:block"
+        className="fixed top-0 left-0 w-[450px] h-[450px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(220,38,38,0.05)_0%,rgba(37,99,235,0.03)_40%,transparent_70%)] rounded-full pointer-events-none z-50 hidden md:block"
       />
       {children}
     </>

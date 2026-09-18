@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://10xinternational.com/sitemap.xml",
+    sitemap: "https://www.gmlsvs.com/sitemap.xml",
   };
 }

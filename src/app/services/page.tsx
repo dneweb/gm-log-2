@@ -5,18 +5,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
+  Truck,
   Ship,
+  ThermometerSnowflake,
+  Weight,
+  Wine,
+  ArrowRightLeft,
+  PackageCheck,
   Plane,
   Warehouse,
-  FileCheck,
+  Boxes,
   ShieldAlert,
-  SearchCheck,
+  Layers,
   ArrowRight,
   CheckCircle2,
   PhoneCall,
   Clock,
-  Globe2,
-  Truck,
+  Building2,
+  Sparkles,
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
@@ -27,114 +33,238 @@ export default function ServicesPage() {
   const [bookingPrefill, setBookingPrefill] = useState<any>(null);
 
   const handleOpenBooking = (serviceName: string) => {
-    setBookingPrefill({ commodity: `${serviceName} Consignment` });
+    setBookingPrefill({ commodity: `${serviceName} Freight` });
     setIsBookingOpen(true);
   };
 
-  const detailedServices = [
+  const servicesList = [
     {
-      id: "uae-agro-export",
-      title: "India ➔ UAE Agro & Produce Export Logistics",
-      badge: "UAE & GULF CORRIDOR",
-      image: "/images/service_uae_agro.jpg",
+      id: "container-drayage",
+      title: "Container Drayage",
+      badge: "PORT & RAIL INTERMODAL",
+      image: "/images/f1.png",
       icon: Ship,
-      desc: "Full Container Load (FCL) dry and temperature-controlled Reefer shipping for Basmati Rice, Fresh Fruits, Vegetables, Pulses, and Indian Spices from Mundra and Hazira ports to Dubai (Jebel Ali), Sharjah, and Gulf ports.",
+      desc: "Fast, reliable container drayage connecting ocean marine terminals, inland rail ramps, and distribution centers across the USA and Canada with dedicated chassis fleets.",
       highlights: [
-        "Reefer Container Cold Chain for Fresh Fruits & Vegetables",
-        "APEDA, FSSAI & Phytosanitary Documentation",
-        "Direct Sailing Schedules with 3-5 Day Transit to Gulf",
-        "Sortex Rice & Spices Container Stuffing Supervision",
+        "Major ocean port & inland rail ramp coverage",
+        "Tri-axle & standard chassis availability",
+        "Demurrage & per-diem mitigation",
+        "24/7 dispatch & real-time container tracking",
       ],
     },
     {
-      id: "africa-machinery-export",
-      title: "India ➔ Africa Machinery, Trucks & Hardware Export",
-      badge: "AFRICA & SOUTH AFRICA CORRIDOR",
-      image: "/images/service_africa_machinery.jpg",
+      id: "full-truckload",
+      title: "Full Truckload (FTL)",
+      badge: "48 STATES DEDICATED",
+      image: "/images/service_ftl_truckload.jpg",
       icon: Truck,
-      desc: "Specialized logistics for heavy commercial trucks, dumpers, JCB excavators, mining equipment, building safety tools, and structural hardware to South Africa (Durban), Kenya (Mombasa), Tanzania, and West African ports.",
+      desc: "Comprehensive nationwide Full Truckload capacity for dry vans and specialized equipment. Guaranteed load acceptance and reliable point-to-point transit across all 48 states.",
       highlights: [
-        "Ro-Ro (Roll-on/Roll-off) & Flat Rack Container Handling",
-        "Heavy Earthmoving Machinery & JCB Lashing / Securing",
-        "Export Packing for Building Safety Tools & Hardware",
-        "Port-to-Project Site Delivery Across African Corridors",
+        "Guaranteed load acceptance & dedicated fleets",
+        "53ft Dry Van nationwide capacity",
+        "Discounted competitive freight pricing",
+        "Strict on-time delivery performance",
       ],
     },
     {
-      id: "china-specialty-import",
-      title: "China ➔ India Specialty Apparel & Cosmetics Import",
-      badge: "CHINA IMPORT SPECIALTY",
-      image: "/images/service_china_import.jpg",
-      icon: Plane,
-      desc: "Comprehensive ocean and air express import clearance for Kids Wear, Mens Wear, Ladies Undergarments, Fashion Textiles, and Beauty Cosmetics / Personal Care from Guangzhou, Yiwu, Ningbo, and Shanghai to Indian ICDs.",
+      id: "ltl-shipping",
+      title: "LTL (Less Than Truckload)",
+      badge: "CONSOLIDATED FREIGHT",
+      image: "/images/service_ltl_freight.jpg",
+      icon: Boxes,
+      desc: "Cost-efficient Less Than Truckload consolidation for smaller palletized shipments. Maximize your freight budget with optimized routing and reliable transit schedules.",
       highlights: [
-        "Textile & Garment Customs Classification & EDI Filing",
-        "CDSCO / Cosmetics Regulatory Compliance & Clearance",
-        "LCL Cargo Consolidation & Direct FCL Container Import",
-        "Fast-Track Port Deconsolidation & Door Delivery in India",
+        "Economical regional & long-haul consolidations",
+        "Flexible pickup and delivery windows",
+        "Automated digital tracking updates",
+        "High-density commercial freight discounts",
       ],
     },
     {
-      id: "customs-compliance",
-      title: "DGFT Customs Clearance & Port Brokerage",
-      badge: "GOVT. COMPLIANCE",
-      image: "/images/service_customs_clearance.jpg",
-      icon: FileCheck,
-      desc: "Official customs brokerage and regulatory compliance. Complete EDI filing, Bill of Lading, Shipping Bills, Certificate of Origin, and Duty Drawback at Mundra, Hazira, and JNPT.",
-      highlights: [
-        "Single-Window Customs EDI Port Processing",
-        "Phytosanitary & Quality Inspection Clearances",
-        "Zero-Delay Assessment & Duty Optimization",
-        "Authorized Managing Partner Signatory Supervision",
-      ],
-    },
-    {
-      id: "warehousing-packaging",
-      title: "Smart Warehousing, Palletizing & Cold Chain",
-      badge: "LOGISTICS HUBS",
+      id: "reefer-containers",
+      title: "Reefer Containers / Trailers",
+      badge: "COLD CHAIN LOGISTICS",
       image: "/images/service_cold_chain.jpg",
-      icon: Warehouse,
-      desc: "Strategic warehousing near Gujarat ports offering export-grade palletizing, vacuum packaging for spices, moisture-barrier wrapping, and precision temperature storage for agricultural perishables.",
+      icon: ThermometerSnowflake,
+      desc: "Precision temperature-controlled reefer trailers and intermodal reefer containers for perishable food & beverage, pharmaceuticals, and temperature-sensitive chemicals.",
       highlights: [
-        "24/7 Monitored CCTV Security & Temperature Logs",
-        "Export Palletizing, Shrink Wrapping & Crating",
-        "Barcode Scanning & Inventory Management",
-        "Automated Container Stuffing & De-stuffing",
+        "Continuous digital temperature monitoring",
+        "Frozen, chilled & climate-controlled capabilities",
+        "FDA, FSMA & food-grade sanitization standards",
+        "Pre-tripped and audited cooling machinery",
       ],
     },
     {
-      id: "quality-inspection",
-      title: "Pre-Shipment Quality Inspection & Sourcing Advisory",
-      badge: "QUALITY ASSURANCE",
-      image: "/images/freight_tablet_tracking.jpg",
-      icon: SearchCheck,
-      desc: "Independent quality verification, weight certification, and container seal auditing to guarantee that exported rice, spices, fruits, machinery, and imported garments strictly comply with buyer specifications.",
+      id: "overweight-loads",
+      title: "Overweight Loads",
+      badge: "PERMITTED HEAVY HAUL",
+      image: "/images/service_overweight_heavyhaul.jpg",
+      icon: Weight,
+      desc: "Certified heavy-haul transportation with multi-axle trailers and state-issued overweight permits for dense ocean containers, industrial machinery, and bulk cargo.",
       highlights: [
-        "Comprehensive Pre-Shipment Audit Reports",
-        "Grain Moisture, Purity & Grade Verification",
-        "Machinery Load Testing & Anti-Rust Checks",
-        "Apparel Stitching & Fabric GSM Verification",
+        "State-specific overweight corridor permits",
+        "Heavy-duty tri-axle chassis deployment",
+        "Engineered bridge formula compliance",
+        "Safety escorts & route survey coordination",
+      ],
+    },
+    {
+      id: "alcohol-permits",
+      title: "Alcohol Permits",
+      badge: "LICENSED & BONDED",
+      image: "/images/service_alcohol_permits.jpg",
+      icon: Wine,
+      desc: "Authorized and bonded carrier transport for alcoholic beverages, spirits, wine, and craft beer, meeting all federal TTB and individual state alcohol regulatory requirements.",
+      highlights: [
+        "TTB & interstate alcohol transportation permits",
+        "High-security sealed trailer protocols",
+        "Temperature-protected wine & beverage hauling",
+        "Full chain-of-custody documentation",
+      ],
+    },
+    {
+      id: "transloading",
+      title: "Transloading",
+      badge: "MODAL CONVERSION",
+      image: "/images/service_transloading_dock.jpg",
+      icon: ArrowRightLeft,
+      desc: "Seamless transloading between ocean shipping containers, rail cars, and over-the-road domestic 53ft trailers to reduce demurrage and streamline distribution.",
+      highlights: [
+        "Rapid port-side cross-dock & transload facilities",
+        "Palletized, slip-sheet & floor-loaded cargo transfer",
+        "Cargo weight re-balancing and inspection",
+        "Significant reduction in per-diem storage costs",
+      ],
+    },
+    {
+      id: "palletize-shrinkwrap",
+      title: "Palletize And Shrink Wrap",
+      badge: "CARGO PREPARATION",
+      image: "/images/service_palletize_shrinkwrap.jpg",
+      icon: PackageCheck,
+      desc: "Complete cargo stabilization, commercial pallet building, restacking, banding, and heavy-duty shrink-wrapping to prepare goods for secure long-haul trucking or rail transit.",
+      highlights: [
+        "Heavy-gauge industrial shrink-wrap protection",
+        "Standard GMA wooden & plastic pallets",
+        "Corner board protection & banding",
+        "Damaged pallet rework and restacking",
+      ],
+    },
+    {
+      id: "airport-pickups",
+      title: "Airport Pick ups",
+      badge: "EXPEDITED AIR CARGO",
+      image: "/images/service_airport_cargo.jpg",
+      icon: Plane,
+      desc: "Time-critical recovery and delivery of air freight from major airport cargo hubs with expedited roller-bed, van, and straight truck transfers.",
+      highlights: [
+        "Fast airline terminal cargo recovery",
+        "TSA-compliant and bonded transport",
+        "Same-day & next-flight-out dispatch",
+        "Hotshot delivery to regional distribution centers",
+      ],
+    },
+    {
+      id: "container-storage",
+      title: "Container Storage",
+      badge: "SECURE YARDS",
+      image: "/images/b1.png",
+      icon: Warehouse,
+      desc: "Secure, fenced, and 24/7 monitored container storage yards for loaded and empty intermodal shipping containers, chassis pools, and staged imports.",
+      highlights: [
+        "24/7 gated security with electronic surveillance",
+        "Short-term and long-term staging options",
+        "Reefer plug-in electrical connections available",
+        "Chassis pool management and inspection",
+      ],
+    },
+    {
+      id: "export-stuffing",
+      title: "Export Stuffing",
+      badge: "MARITIME PACKING",
+      image: "/images/service_export_stuffing.jpg",
+      icon: Layers,
+      desc: "Expert ocean container stuffing, blocking, bracing, and certified weight distribution to ensure cargo arrives intact and complies with SOLAS VGM maritime guidelines.",
+      highlights: [
+        "Custom heavy blocking, bracing & dunnage",
+        "SOLAS VGM certified container weighing",
+        "Moisture control and desiccant placement",
+        "Export documentation and photographic verification",
+      ],
+    },
+    {
+      id: "hazmat",
+      title: "Hazmat Cargo",
+      badge: "DOT CERTIFIED HAZARDOUS",
+      image: "/images/service_hazmat_transport.jpg",
+      icon: ShieldAlert,
+      desc: "Certified Hazardous Materials transportation executed by trained drivers with full DOT compliance, safety placards, and specialized safety response equipment.",
+      highlights: [
+        "DOT Hazmat certified drivers & equipment",
+        "Classes 2, 3, 4, 5, 6, 8, and 9 capability",
+        "Emergency response protocols & safety gear",
+        "Comprehensive hazardous manifest auditing",
+      ],
+    },
+    {
+      id: "flatbed",
+      title: "Flatbed Hauling",
+      badge: "OPEN DECK CARGO",
+      image: "/images/service_flatbed_hauling.jpg",
+      icon: Truck,
+      desc: "Versatile flatbed, step-deck, and drop-deck trailers for construction supplies, machinery, raw steel, lumber, and oversized commercial freight.",
+      highlights: [
+        "Standard flatbed, step-deck & lowboy equipment",
+        "Heavy strapping, chains, and tarping services",
+        "Job site and unimproved ground deliveries",
+        "Over-dimensional routing and pilot vehicles",
+      ],
+    },
+    {
+      id: "warehousing",
+      title: "Warehousing",
+      badge: "SECURE DISTRIBUTION",
+      image: "/images/service_warehouse.jpg",
+      icon: Warehouse,
+      desc: "Strategic warehousing and distribution solutions offering high-density pallet storage, cross-docking, pick-and-pack fulfillment, and modern inventory visibility.",
+      highlights: [
+        "Clean, climate-monitored facility space",
+        "Barcode inventory tracking & EDI integration",
+        "Short-term overflow & dedicated contract space",
+        "Same-day order fulfillment and outbound staging",
       ],
     },
   ];
 
   return (
-    <main className="w-full min-h-screen bg-[#07080b] text-white overflow-x-hidden flex flex-col justify-between">
+    <main className="w-full min-h-screen bg-[#f8fafc] text-slate-900 overflow-x-clip flex flex-col justify-between">
       <div>
         {/* Page Header */}
         <PageHeader
-          badge="10X INTERNATIONAL SERVICES"
-          title="End-to-End Export, Import &"
-          highlightedWord="Freight Logistics"
-          description="Comprehensive cross-border logistics capabilities powered by government-registered compliance, prime port access, and precision supply chain execution."
+          badge="WHAT WE DO • 14 CORE CAPABILITIES"
+          title="Comprehensive Freight &"
+          highlightedWord="Logistics Services"
+          description="USA-based fully licensed 3PL operating in 48 states across the USA and Canada with 20 years combined experience. We find the right carrier for the right load at the right time."
           breadcrumb="Services"
           onOpenBooking={() => setIsBookingOpen(true)}
         />
 
-        {/* Detailed Services Grid */}
+        {/* 14 Services Grid */}
         <section className="py-12 sm:py-16 px-4 sm:px-8 md:px-14 lg:px-20 max-w-[1520px] mx-auto w-full">
-          <div className="flex flex-col gap-12 sm:gap-16">
-            {detailedServices.map((service, idx) => {
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold tracking-widest text-[#dc2626] uppercase font-mono">
+              NATIONWIDE 3PL CAPABILITIES
+            </span>
+            <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mt-1">
+              Engineered for Speed &amp; Reliability
+            </h2>
+            <p className="text-slate-600 text-xs sm:text-sm mt-2">
+              From intermodal port drayage and full truckloads to specialized reefer and hazmat shipping across USA &amp; Canada.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-10 sm:gap-14">
+            {servicesList.map((service, idx) => {
               const Icon = service.icon;
               const isEven = idx % 2 === 0;
 
@@ -144,12 +274,12 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.7 }}
-                  className="bg-zinc-900/90 border border-white/15 rounded-[32px] overflow-hidden shadow-2xl p-6 sm:p-8 md:p-10 backdrop-blur-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group hover:border-[#ff5500]/40 transition-all duration-300"
+                  transition={{ duration: 0.6 }}
+                  className="bg-white border border-slate-200/90 rounded-[32px] overflow-hidden shadow-md hover:shadow-2xl p-6 sm:p-8 md:p-10 backdrop-blur-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group hover:border-[#dc2626]/40 transition-all duration-300"
                 >
                   {/* Visual Side */}
                   <div
-                    className={`lg:col-span-6 relative w-full h-[260px] sm:h-[320px] md:h-[360px] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 ${
+                    className={`lg:col-span-5 relative w-full h-[240px] sm:h-[290px] md:h-[330px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 ${
                       isEven ? "lg:order-1" : "lg:order-2"
                     }`}
                   >
@@ -157,59 +287,65 @@ export default function ServicesPage() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-90"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-95"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" />
                     
-                    <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/20 px-3.5 py-1 rounded-full text-xs font-mono text-[#ff5500] font-semibold">
+                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md border border-slate-200/90 px-3.5 py-1 rounded-full text-xs font-mono text-[#dc2626] font-semibold shadow-sm">
                       {service.badge}
                     </div>
                   </div>
 
                   {/* Text Description Side */}
                   <div
-                    className={`lg:col-span-6 flex flex-col gap-4 text-left ${
+                    className={`lg:col-span-7 flex flex-col gap-4 text-left ${
                       isEven ? "lg:order-2" : "lg:order-1"
                     }`}
                   >
-                    <div className="w-12 h-12 rounded-2xl bg-[#ff5500]/15 border border-[#ff5500]/30 flex items-center justify-center text-[#ff5500]">
-                      <Icon className="w-6 h-6" />
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-2xl bg-[#dc2626]/10 border border-[#dc2626]/20 flex items-center justify-center text-[#dc2626]">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <span className="text-xs font-mono text-slate-500 font-semibold uppercase tracking-wider">
+                        Service #{String(idx + 1).padStart(2, "0")}
+                      </span>
                     </div>
 
-                    <h2 className="font-outfit text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+                    <h3 className="font-outfit text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
                       {service.title}
-                    </h2>
+                    </h3>
 
-                    <p className="text-zinc-300 text-xs sm:text-sm md:text-[15px] leading-relaxed">
+                    <p className="text-slate-600 text-xs sm:text-sm md:text-[15px] leading-relaxed">
                       {service.desc}
                     </p>
 
                     {/* Highlights List */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 py-2">
                       {service.highlights.map((item, i) => (
-                        <div key={i} className="flex items-center gap-2 text-xs sm:text-sm text-zinc-300">
-                          <CheckCircle2 className="w-4 h-4 text-[#ff5500] shrink-0" />
+                        <div key={i} className="flex items-center gap-2 text-xs sm:text-sm text-slate-700">
+                          <CheckCircle2 className="w-4 h-4 text-[#dc2626] shrink-0" />
                           <span>{item}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* CTA Button */}
-                    <div className="pt-2 flex items-center gap-4">
+                    <div className="pt-2 flex flex-wrap items-center gap-4">
                       <button
                         onClick={() => handleOpenBooking(service.title)}
-                        className="inline-flex items-center gap-2.5 bg-[#ff5500] hover:bg-[#e04800] text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/25 active:scale-95 cursor-pointer"
+                        className="inline-flex items-center gap-2.5 bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-300 shadow-lg shadow-red-600/25 active:scale-95 cursor-pointer"
                       >
                         <span>Book / Inquire This Service</span>
                         <ArrowRight className="w-4 h-4" />
                       </button>
 
-                      <Link
-                        href="/contact"
-                        className="text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-colors"
+                      <a
+                        href="tel:7329177747"
+                        className="text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-950 transition-colors inline-flex items-center gap-1.5"
                       >
-                        Talk to an Expert →
-                      </Link>
+                        <PhoneCall className="w-3.5 h-3.5 text-[#dc2626]" />
+                        <span>Call 732-917-7747</span>
+                      </a>
                     </div>
                   </div>
                 </motion.div>
@@ -218,23 +354,37 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Global Hubs Banner */}
+        {/* Quick Quote Banner */}
         <section className="py-12 px-4 sm:px-8 md:px-14 lg:px-20 max-w-[1520px] mx-auto w-full">
-          <div className="bg-zinc-950 border border-white/15 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-            <div className="max-w-xl">
-              <h3 className="font-outfit text-2xl sm:text-3xl font-bold text-white mb-2">
-                Need a Custom Freight Corridor or Bulk Quotation?
+          <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(circle,rgba(220,38,38,0.06)_0%,transparent_70%)] pointer-events-none" />
+            
+            <div className="max-w-2xl relative z-10">
+              <span className="text-xs font-mono text-[#dc2626] font-bold tracking-widest uppercase">
+                FAST FREIGHT DISPATCH
+              </span>
+              <h3 className="font-outfit text-2xl sm:text-3xl font-bold text-slate-900 mt-1 mb-2">
+                Need a Custom 3PL Freight Quote or Dedicated Fleet?
               </h3>
-              <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                Connect directly with 10X INTERNATIONAL managing partners to discuss container allocations, recurring sailing schedules, or specialized customs clearances.
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Connect directly with GM LOGISTICS SERVICES 24/7 dispatch desk. We match the right carrier for your load at discounted rates across 48 states and Canada.
               </p>
             </div>
-            <Link
-              href="/contact"
-              className="bg-white hover:bg-zinc-100 text-zinc-950 font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full transition-all duration-300 shadow-xl shrink-0"
-            >
-              Contact Ahmedabad HQ
-            </Link>
+            
+            <div className="flex flex-wrap items-center gap-3 relative z-10 shrink-0">
+              <button
+                onClick={() => setIsBookingOpen(true)}
+                className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full transition-all duration-300 shadow-xl shadow-red-600/20"
+              >
+                Instant Freight Quote
+              </button>
+              <Link
+                href="/contact"
+                className="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full transition-all duration-300 border border-slate-300 shadow-sm"
+              >
+                Contact 24/7 Desk
+              </Link>
+            </div>
           </div>
         </section>
       </div>
