@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     description:
       "USA based fully licensed third party logistics provider operating in 48 states across USA and Canada. 20 years combined experience.",
   },
-  robots: {
+    robots: {
     index: true,
     follow: true,
     googleBot: {
@@ -104,6 +104,14 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
 };
 
@@ -167,6 +175,8 @@ export default function RootLayout({
       className={`${bebasNeue.variable} ${plusJakarta.variable} ${outfit.variable} scroll-smooth`}
     >
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
