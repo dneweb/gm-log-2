@@ -116,6 +116,7 @@ export const metadata: Metadata = {
 };
 
 import GSAPProvider from "@/components/GSAPProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,
@@ -184,6 +185,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-[#f8fafc] text-slate-900 font-sans antialiased selection:bg-[#dc2626] selection:text-white">
         <GSAPProvider>{children}</GSAPProvider>
+        <Analytics />
       </body>
     </html>
   );
